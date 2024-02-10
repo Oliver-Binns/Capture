@@ -1,3 +1,4 @@
+import CoreLocation
 import SwiftUI
 
 struct PhotoEditor: View {
@@ -6,7 +7,11 @@ struct PhotoEditor: View {
     
     let photo: Photo?
     
-    @State var timestamp: Date = Date()
+    @State private var timestamp: Date = Date()
+    @State private var location: Location?
+    @State private var camera: Camera?
+    @State private var lens: Lens?
+    @State private var filmSpeed: FilmSpeed = .fourHundred
     
     var body: some View {
         NavigationView {
@@ -17,16 +22,43 @@ struct PhotoEditor: View {
                 
                 Section("Metadata") {
                     DatePicker("Timestamp", selection: $timestamp)
-                    Text("Location")
+                    
+                    Button {
+                        
+                    } label: {
+                        Label("Add Location", systemImage: "location")
+                    }
                 }
                 
                 Section("Equipment") {
-                    Text("Select Camera")
-                    Text("Select Lens")
+                    if let camera {
+                        
+                    } else {
+                        Button {
+                            
+                        } label: {
+                            Label("Select Camera", systemImage: "camera")
+                        }
+                    }
+                    
+                    if let lens {
+                        
+                    } else {
+                        Button {
+                            
+                        } label: {
+                            Label("Select Lens", systemImage: "camera.aperture")
+                        }
+                    }
                 }
                 
                 Section("Settings") {
-                    Text("Film Speed (Camera)")
+                    Picker("Film Speed", selection: $filmSpeed) {
+                        ForEach(FilmSpeed.allCases) { speed in
+                            Text("\(speed.rawValue)").tag(speed)
+                        }
+                    }
+                    
                     Text("Aperture (Lens)")
                 }
             }
@@ -41,14 +73,32 @@ struct PhotoEditor: View {
                 
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
-                        save()
+                        dismiss()
                     }
                 }
             }
         }
     }
     
+    
+    
     func save() {
+        if let photo {
+            photo.timestamp = timestamp
+            photo.location = location
+            photo.camera = camera
+            photo.lens = lens
+            photo.filmSpeed = filmSpeed
+        } else {
+            modelContext.insert(
+                Photo(timestamp: timestamp,
+                      location: location,
+                      camera: camera,
+                      lens: lens,
+                      filmSpeed: filmSpeed)
+            )
+        }
         
+        try? modelContext.save()
     }
 }
