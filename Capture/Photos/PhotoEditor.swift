@@ -14,63 +14,70 @@ struct PhotoEditor: View {
     @State private var filmSpeed: FilmSpeed = .fourHundred
     
     var body: some View {
-        NavigationView {
-            Form {
-                Section("Preview") {
-                    
-                }
+        Form {
+            Section("Preview") {
                 
-                Section("Metadata") {
-                    DatePicker("Timestamp", selection: $timestamp)
+            }
+            
+            Section("Metadata") {
+                DatePicker("Timestamp", selection: $timestamp)
+                
+                Button {
                     
+                } label: {
+                    Label("Add Location", systemImage: "location")
+                }
+            }
+            
+            Section("Equipment") {
+                if let camera {
+                    
+                } else {
                     Button {
                         
                     } label: {
-                        Label("Add Location", systemImage: "location")
+                        Label("Select Camera", systemImage: "camera")
                     }
                 }
                 
-                Section("Equipment") {
-                    if let camera {
-                        
-                    } else {
-                        Button {
-                            
-                        } label: {
-                            Label("Select Camera", systemImage: "camera")
-                        }
-                    }
+                if let lens {
                     
-                    if let lens {
+                } else {
+                    Button {
                         
-                    } else {
-                        Button {
-                            
-                        } label: {
-                            Label("Select Lens", systemImage: "camera.aperture")
-                        }
+                    } label: {
+                        Label("Select Lens", systemImage: "camera.aperture")
                     }
-                }
-                
-                Section("Settings") {
-                    Picker("Film Speed", selection: $filmSpeed) {
-                        ForEach(FilmSpeed.allCases) { speed in
-                            Text("\(speed.rawValue)").tag(speed)
-                        }
-                    }
-                    
-                    Text("Aperture (Lens)")
                 }
             }
-            .navigationTitle("Log Photo")
-            .toolbar {
-                ToolbarItemGroup(placement: .primaryAction) {
-                    Button("Save") {
-                        save()
-                        dismiss()
+            
+            Section("Settings") {
+                Picker("Film Speed", selection: $filmSpeed) {
+                    ForEach(FilmSpeed.allCases) { speed in
+                        Text("\(speed.rawValue)").tag(speed)
                     }
                 }
                 
+                Text("Aperture (Lens)")
+            }
+        }
+        .navigationTitle("Log Photo")
+        .onAppear {
+            timestamp = photo?.timestamp ?? Date()
+            location = photo?.location
+            camera = photo?.camera
+            lens = photo?.lens
+            filmSpeed = photo?.filmSpeed ?? .fourHundred
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .primaryAction) {
+                Button("Save") {
+                    save()
+                    dismiss()
+                }
+            }
+            
+            if photo == nil {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
                         dismiss()
