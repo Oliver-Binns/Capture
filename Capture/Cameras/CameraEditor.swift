@@ -9,33 +9,39 @@ struct CameraEditor: View {
     @State private var make: String = ""
     @State private var model: String = ""
     
+    private var navigationTitle: String {
+        camera == nil ?
+            "Add Camera" :
+            "Edit Camera"
+    }
+    
     private var isInvalid: Bool {
         make.isEmpty && model.isEmpty
     }
     
     var body: some View {
-        NavigationView {
-            Form {
-                TextField("Make", text: $make)
-                TextField("Model", text: $model)
-            }.onAppear {
-                make = camera?.make ?? ""
-                model = camera?.model ?? ""
-            }.toolbar {
-                ToolbarItemGroup(placement: .primaryAction) {
-                    Button("Save") {
-                        save()
-                        dismiss()
-                    }.disabled(isInvalid)
-                }
-                
+        Form {
+            TextField("Make", text: $make)
+            TextField("Model", text: $model)
+        }.onAppear {
+            make = camera?.make ?? ""
+            model = camera?.model ?? ""
+        }.toolbar {
+            ToolbarItemGroup(placement: .primaryAction) {
+                Button("Save") {
+                    save()
+                    dismiss()
+                }.disabled(isInvalid)
+            }
+            
+            if camera == nil {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
-                        
+                        dismiss()
                     }
                 }
             }
-        }
+        }.navigationTitle(navigationTitle)
     }
     
     func save() {

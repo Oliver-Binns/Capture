@@ -9,7 +9,9 @@ struct CamerasList: View {
         NavigationView {
             List {
                 ForEach(cameras) { camera in
-                    Text("\(camera.make) \(camera.model)")
+                    NavigationLink("\(camera.make) \(camera.model)") {
+                        CameraEditor(camera: camera)
+                    }
                 }
             }
             .navigationTitle("Cameras")
@@ -25,7 +27,9 @@ struct CamerasList: View {
         .tabItem {
             Label("Cameras", systemImage: "camera.fill")
         }.sheet(isPresented: $isEditing) {
-            CameraEditor(camera: nil)
+            NavigationView {
+                CameraEditor(camera: nil)
+            }
         }
     }
 }

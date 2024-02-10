@@ -9,7 +9,9 @@ struct LensesList: View {
         NavigationView {
             List {
                 ForEach(lenses) { lens in
-                    Text("\(lens.make) \(lens.model)")
+                    NavigationLink("\(lens.make) \(lens.model)") {
+                        LensEditor(lens: lens)
+                    }
                 }
             }
             .navigationTitle("Lenses")
@@ -23,7 +25,9 @@ struct LensesList: View {
         }.tabItem {
             Label("Lenses", systemImage: "camera.aperture")
         }.sheet(isPresented: $isEditing) {
-            LensEditor(lens: nil)
+            NavigationView {
+                LensEditor(lens: nil)
+            }
         }
     }
 }
