@@ -1,0 +1,29 @@
+name: Merged
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Run Quality Report
+    runs-on: macos-13
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Add path globally
+        run: echo "/usr/local/bin" >> $GITHUB_PATH
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: 'true'
+          
+      - name: Increment Version
+        id: versioning
+        uses: Oliver-Binns/Versioning@main
+        with:
+          ACTION_TYPE: 'Release'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
