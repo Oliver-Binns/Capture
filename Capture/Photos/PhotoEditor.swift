@@ -98,7 +98,7 @@ struct PhotoEditor: View {
         }
     }
     
-    func save() {
+    private func save() {
         if let photo {
             photo.timestamp = timestamp
             photo.location = location

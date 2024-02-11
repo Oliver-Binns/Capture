@@ -30,3 +30,6 @@ jobs:
         uses: Oliver-Binns/Versioning@main
         with:
           ACTION_TYPE: 'Validate'
+          
+      - name: Run Tests
+        run: xcodebuild test -scheme Capture
