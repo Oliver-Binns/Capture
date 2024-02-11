@@ -7,11 +7,33 @@ struct PhotoEditor: View {
     
     let photo: Photo?
     
+    init(photo: Photo?) {
+        self.photo = photo
+    }
+    
     @State private var timestamp: Date = Date()
     @State private var location: Location?
     @State private var camera: Camera?
     @State private var lens: Lens?
     @State private var filmSpeed: FilmSpeed = .fourHundred
+    
+    @State private var hasAppeared: Bool = false
+    
+    private var cameraText: String {
+        if let camera {
+            "\(camera.make) \(camera.model)"
+        } else {
+            "Select Camera"
+        }
+    }
+    
+    private var lensText: String {
+        if let lens {
+            "\(lens.make) \(lens.model)"
+        } else {
+            "Select Lens"
+        }
+    }
     
     var body: some View {
         Form {
@@ -25,24 +47,16 @@ struct PhotoEditor: View {
             }
             
             Section("Equipment") {
-                if let camera {
-                    
-                } else {
-                    Button {
-                        
-                    } label: {
-                        Label("Select Camera", systemImage: "camera")
-                    }
+                NavigationLink {
+                    CameraPicker(camera: $camera)
+                } label: {
+                    Label(cameraText, systemImage: "camera")
                 }
                 
-                if let lens {
-                    
-                } else {
-                    Button {
-                        
-                    } label: {
-                        Label("Select Lens", systemImage: "camera.aperture")
-                    }
+                NavigationLink {
+                    LensPicker(lens: $lens)
+                } label: {
+                    Label(lensText, systemImage: "camera.aperture")
                 }
             }
             
@@ -58,11 +72,13 @@ struct PhotoEditor: View {
         }
         .navigationTitle("Log Photo")
         .onAppear {
+            guard !hasAppeared else { return }
             timestamp = photo?.timestamp ?? Date()
             location = photo?.location
             camera = photo?.camera
             lens = photo?.lens
-            filmSpeed = photo?.filmSpeed ?? .fourHundred
+            filmSpeed = photo?.filmSpeed ?? filmSpeed
+            hasAppeared = true
         }
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {

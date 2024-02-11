@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7CB5AEB62B783E1F0045CF9C /* XCTest+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB5AEB52B783E1F0045CF9C /* XCTest+Helpers.swift */; };
 		7CB5AEBA2B7844DA0045CF9C /* MockPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB5AEB92B7844DA0045CF9C /* MockPlacemark.swift */; };
+		7CB5AEBC2B7847E90045CF9C /* LensPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB5AEBB2B7847E90045CF9C /* LensPicker.swift */; };
+		7CB5AEBE2B7848DD0045CF9C /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB5AEBD2B7848DD0045CF9C /* CameraPicker.swift */; };
 		7CF717E92B780A9500A0AA34 /* CaptureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF717E82B780A9500A0AA34 /* CaptureApp.swift */; };
 		7CF717EB2B780A9500A0AA34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF717EA2B780A9500A0AA34 /* ContentView.swift */; };
 		7CF717ED2B780A9600A0AA34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CF717EC2B780A9600A0AA34 /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 /* Begin PBXFileReference section */
 		7CB5AEB52B783E1F0045CF9C /* XCTest+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Helpers.swift"; sourceTree = "<group>"; };
 		7CB5AEB92B7844DA0045CF9C /* MockPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPlacemark.swift; sourceTree = "<group>"; };
+		7CB5AEBB2B7847E90045CF9C /* LensPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensPicker.swift; sourceTree = "<group>"; };
+		7CB5AEBD2B7848DD0045CF9C /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
 		7CF717E52B780A9500A0AA34 /* Capture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF717E82B780A9500A0AA34 /* CaptureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureApp.swift; sourceTree = "<group>"; };
 		7CF717EA2B780A9500A0AA34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 				7CF718012B780FD400A0AA34 /* CameraList.swift */,
 				7CF718032B78104200A0AA34 /* CameraEditor.swift */,
 				7CF718052B7810A000A0AA34 /* Camera.swift */,
+				7CB5AEBD2B7848DD0045CF9C /* CameraPicker.swift */,
 			);
 			path = Cameras;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 				7CF717FD2B780FB000A0AA34 /* LensEditor.swift */,
 				7CF717FF2B780FBF00A0AA34 /* LensesList.swift */,
 				7CF718092B7810E200A0AA34 /* Lens.swift */,
+				7CB5AEBB2B7847E90045CF9C /* LensPicker.swift */,
 			);
 			path = Lenses;
 			sourceTree = "<group>";
@@ -318,10 +324,12 @@
 				7CF718042B78104200A0AA34 /* CameraEditor.swift in Sources */,
 				7CF717FA2B780F7F00A0AA34 /* PhotosList.swift in Sources */,
 				7CF718122B78221600A0AA34 /* LocationManager.swift in Sources */,
+				7CB5AEBE2B7848DD0045CF9C /* CameraPicker.swift in Sources */,
 				7CF718182B78336D00A0AA34 /* Geocoder.swift in Sources */,
 				7CF717FE2B780FB000A0AA34 /* LensEditor.swift in Sources */,
 				7CF7180A2B7810E200A0AA34 /* Lens.swift in Sources */,
 				7CF718062B7810A000A0AA34 /* Camera.swift in Sources */,
+				7CB5AEBC2B7847E90045CF9C /* LensPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
