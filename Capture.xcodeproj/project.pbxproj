@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7CB5AEB62B783E1F0045CF9C /* XCTest+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB5AEB52B783E1F0045CF9C /* XCTest+Helpers.swift */; };
+		7CB5AEBA2B7844DA0045CF9C /* MockPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB5AEB92B7844DA0045CF9C /* MockPlacemark.swift */; };
 		7CF717E92B780A9500A0AA34 /* CaptureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF717E82B780A9500A0AA34 /* CaptureApp.swift */; };
 		7CF717EB2B780A9500A0AA34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF717EA2B780A9500A0AA34 /* ContentView.swift */; };
 		7CF717ED2B780A9600A0AA34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CF717EC2B780A9600A0AA34 /* Assets.xcassets */; };
@@ -22,9 +24,29 @@
 		7CF7180A2B7810E200A0AA34 /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF718092B7810E200A0AA34 /* Lens.swift */; };
 		7CF7180C2B7810F900A0AA34 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF7180B2B7810F900A0AA34 /* Photo.swift */; };
 		7CF7180E2B78111300A0AA34 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF7180D2B78111300A0AA34 /* Location.swift */; };
+		7CF718122B78221600A0AA34 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF718112B78221600A0AA34 /* LocationManager.swift */; };
+		7CF718142B7826BC00A0AA34 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF718132B7826BC00A0AA34 /* LocationFetcher.swift */; };
+		7CF718162B782CBD00A0AA34 /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF718152B782CBD00A0AA34 /* LocationButton.swift */; };
+		7CF718182B78336D00A0AA34 /* Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF718172B78336D00A0AA34 /* Geocoder.swift */; };
+		7CF718202B7834B000A0AA34 /* CaptureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF7181F2B7834B000A0AA34 /* CaptureTests.swift */; };
+		7CF718282B7834DE00A0AA34 /* FakeGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF718272B7834DE00A0AA34 /* FakeGeocoder.swift */; };
+		7CF7182A2B78351500A0AA34 /* FakeLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF718292B78351500A0AA34 /* FakeLocationManager.swift */; };
+		7CF7182C2B7838F200A0AA34 /* MockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF7182B2B7838F200A0AA34 /* MockLocationManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7CF718212B7834B000A0AA34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CF717DD2B780A9500A0AA34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CF717E42B780A9500A0AA34;
+			remoteInfo = Capture;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		7CB5AEB52B783E1F0045CF9C /* XCTest+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Helpers.swift"; sourceTree = "<group>"; };
+		7CB5AEB92B7844DA0045CF9C /* MockPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPlacemark.swift; sourceTree = "<group>"; };
 		7CF717E52B780A9500A0AA34 /* Capture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF717E82B780A9500A0AA34 /* CaptureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureApp.swift; sourceTree = "<group>"; };
 		7CF717EA2B780A9500A0AA34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +63,15 @@
 		7CF718092B7810E200A0AA34 /* Lens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lens.swift; sourceTree = "<group>"; };
 		7CF7180B2B7810F900A0AA34 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		7CF7180D2B78111300A0AA34 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		7CF718112B78221600A0AA34 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		7CF718132B7826BC00A0AA34 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
+		7CF718152B782CBD00A0AA34 /* LocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
+		7CF718172B78336D00A0AA34 /* Geocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; };
+		7CF7181D2B7834B000A0AA34 /* CaptureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaptureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CF7181F2B7834B000A0AA34 /* CaptureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureTests.swift; sourceTree = "<group>"; };
+		7CF718272B7834DE00A0AA34 /* FakeGeocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeGeocoder.swift; sourceTree = "<group>"; };
+		7CF718292B78351500A0AA34 /* FakeLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLocationManager.swift; sourceTree = "<group>"; };
+		7CF7182B2B7838F200A0AA34 /* MockLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,13 +82,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7CF7181A2B7834B000A0AA34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7CB5AEB42B783E110045CF9C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7CB5AEB52B783E1F0045CF9C /* XCTest+Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		7CF717DC2B780A9500A0AA34 = {
 			isa = PBXGroup;
 			children = (
 				7CF717E72B780A9500A0AA34 /* Capture */,
+				7CF7181E2B7834B000A0AA34 /* CaptureTests */,
 				7CF717E62B780A9500A0AA34 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				7CF717E52B780A9500A0AA34 /* Capture.app */,
+				7CF7181D2B7834B000A0AA34 /* CaptureTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +163,7 @@
 		7CF717F82B780F4A00A0AA34 /* Photos */ = {
 			isa = PBXGroup;
 			children = (
+				7CF718102B78220700A0AA34 /* Location */,
 				7CF717F92B780F7F00A0AA34 /* PhotosList.swift */,
 				7CF717FB2B780F9900A0AA34 /* PhotoEditor.swift */,
 				7CF718072B7810CA00A0AA34 /* FilmSpeed.swift */,
@@ -122,6 +171,38 @@
 				7CF7180D2B78111300A0AA34 /* Location.swift */,
 			);
 			path = Photos;
+			sourceTree = "<group>";
+		};
+		7CF718102B78220700A0AA34 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				7CF718112B78221600A0AA34 /* LocationManager.swift */,
+				7CF718132B7826BC00A0AA34 /* LocationFetcher.swift */,
+				7CF718152B782CBD00A0AA34 /* LocationButton.swift */,
+				7CF718172B78336D00A0AA34 /* Geocoder.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		7CF7181E2B7834B000A0AA34 /* CaptureTests */ = {
+			isa = PBXGroup;
+			children = (
+				7CB5AEB42B783E110045CF9C /* Helpers */,
+				7CF718262B7834D500A0AA34 /* Mocks */,
+				7CF7181F2B7834B000A0AA34 /* CaptureTests.swift */,
+			);
+			path = CaptureTests;
+			sourceTree = "<group>";
+		};
+		7CF718262B7834D500A0AA34 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				7CB5AEB92B7844DA0045CF9C /* MockPlacemark.swift */,
+				7CF718272B7834DE00A0AA34 /* FakeGeocoder.swift */,
+				7CF718292B78351500A0AA34 /* FakeLocationManager.swift */,
+				7CF7182B2B7838F200A0AA34 /* MockLocationManager.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +225,24 @@
 			productReference = 7CF717E52B780A9500A0AA34 /* Capture.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7CF7181C2B7834B000A0AA34 /* CaptureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CF718232B7834B000A0AA34 /* Build configuration list for PBXNativeTarget "CaptureTests" */;
+			buildPhases = (
+				7CF718192B7834B000A0AA34 /* Sources */,
+				7CF7181A2B7834B000A0AA34 /* Frameworks */,
+				7CF7181B2B7834B000A0AA34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7CF718222B7834B000A0AA34 /* PBXTargetDependency */,
+			);
+			name = CaptureTests;
+			productName = CaptureTests;
+			productReference = 7CF7181D2B7834B000A0AA34 /* CaptureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -156,6 +255,10 @@
 				TargetAttributes = {
 					7CF717E42B780A9500A0AA34 = {
 						CreatedOnToolsVersion = 15.2;
+					};
+					7CF7181C2B7834B000A0AA34 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 7CF717E42B780A9500A0AA34;
 					};
 				};
 			};
@@ -173,6 +276,7 @@
 			projectRoot = "";
 			targets = (
 				7CF717E42B780A9500A0AA34 /* Capture */,
+				7CF7181C2B7834B000A0AA34 /* CaptureTests */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +291,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7CF7181B2B7834B000A0AA34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -196,7 +307,9 @@
 			files = (
 				7CF7180C2B7810F900A0AA34 /* Photo.swift in Sources */,
 				7CF717EB2B780A9500A0AA34 /* ContentView.swift in Sources */,
+				7CF718142B7826BC00A0AA34 /* LocationFetcher.swift in Sources */,
 				7CF717FC2B780F9900A0AA34 /* PhotoEditor.swift in Sources */,
+				7CF718162B782CBD00A0AA34 /* LocationButton.swift in Sources */,
 				7CF717E92B780A9500A0AA34 /* CaptureApp.swift in Sources */,
 				7CF718082B7810CA00A0AA34 /* FilmSpeed.swift in Sources */,
 				7CF718002B780FBF00A0AA34 /* LensesList.swift in Sources */,
@@ -204,13 +317,36 @@
 				7CF718022B780FD400A0AA34 /* CameraList.swift in Sources */,
 				7CF718042B78104200A0AA34 /* CameraEditor.swift in Sources */,
 				7CF717FA2B780F7F00A0AA34 /* PhotosList.swift in Sources */,
+				7CF718122B78221600A0AA34 /* LocationManager.swift in Sources */,
+				7CF718182B78336D00A0AA34 /* Geocoder.swift in Sources */,
 				7CF717FE2B780FB000A0AA34 /* LensEditor.swift in Sources */,
 				7CF7180A2B7810E200A0AA34 /* Lens.swift in Sources */,
 				7CF718062B7810A000A0AA34 /* Camera.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7CF718192B7834B000A0AA34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CF718202B7834B000A0AA34 /* CaptureTests.swift in Sources */,
+				7CF718282B7834DE00A0AA34 /* FakeGeocoder.swift in Sources */,
+				7CF7182C2B7838F200A0AA34 /* MockLocationManager.swift in Sources */,
+				7CB5AEB62B783E1F0045CF9C /* XCTest+Helpers.swift in Sources */,
+				7CB5AEBA2B7844DA0045CF9C /* MockPlacemark.swift in Sources */,
+				7CF7182A2B78351500A0AA34 /* FakeLocationManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7CF718222B7834B000A0AA34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CF717E42B780A9500A0AA34 /* Capture */;
+			targetProxy = 7CF718212B7834B000A0AA34 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		7CF717F12B780A9600A0AA34 /* Debug */ = {
@@ -344,6 +480,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to know your position to attach location-based metadata to your photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -378,6 +515,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to know your position to attach location-based metadata to your photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -400,6 +538,42 @@
 			};
 			name = Release;
 		};
+		7CF718242B7834B000A0AA34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z86DH46P79;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.oliverbinns.CaptureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Capture.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Capture";
+			};
+			name = Debug;
+		};
+		7CF718252B7834B000A0AA34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z86DH46P79;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.oliverbinns.CaptureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Capture.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Capture";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -417,6 +591,15 @@
 			buildConfigurations = (
 				7CF717F42B780A9600A0AA34 /* Debug */,
 				7CF717F52B780A9600A0AA34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CF718232B7834B000A0AA34 /* Build configuration list for PBXNativeTarget "CaptureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CF718242B7834B000A0AA34 /* Debug */,
+				7CF718252B7834B000A0AA34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

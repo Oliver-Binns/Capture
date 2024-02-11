@@ -21,12 +21,7 @@ struct PhotoEditor: View {
             
             Section("Metadata") {
                 DatePicker("Timestamp", selection: $timestamp)
-                
-                Button {
-                    
-                } label: {
-                    Label("Add Location", systemImage: "location")
-                }
+                LocationButton(location: $location)
             }
             
             Section("Equipment") {
@@ -86,8 +81,6 @@ struct PhotoEditor: View {
             }
         }
     }
-    
-    
     
     func save() {
         if let photo {

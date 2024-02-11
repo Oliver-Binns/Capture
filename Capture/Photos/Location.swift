@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct Location: Codable {
-    let longitude: Float
-    let latitude: Float
+    let name: String?
+    let latitude: Double
+    let longitude: Double
 }
