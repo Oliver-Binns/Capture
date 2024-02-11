@@ -27,10 +27,12 @@ final class LocationFetcherTests: XCTestCase {
         )
         XCTAssertFalse(sut.isPermissionDenied)
         
+        #if !os(macOS)
         sut.locationManagerDidChangeAuthorization(
             MockLocationManager(mockedAuthorizationStatus: .authorizedWhenInUse)
         )
         XCTAssertFalse(sut.isPermissionDenied)
+        #endif
         
         sut.locationManagerDidChangeAuthorization(
             MockLocationManager(mockedAuthorizationStatus: .restricted)
@@ -54,7 +56,7 @@ final class LocationFetcherTests: XCTestCase {
     }
     
     func testRequestLocationStartsTracking() {
-        manager.authorizationStatus = .authorizedWhenInUse
+        manager.authorizationStatus = .authorizedAlways
         
         Task {
             try await sut.requestLocation()
@@ -72,7 +74,7 @@ final class LocationFetcherTests: XCTestCase {
         wait(for: self.sut.isLoading)
         
         sut.locationManagerDidChangeAuthorization(
-            MockLocationManager(mockedAuthorizationStatus: .authorizedWhenInUse)
+            MockLocationManager(mockedAuthorizationStatus: .authorizedAlways)
         )
         
         XCTAssertTrue(manager.startedUpdatingLocation)
@@ -103,7 +105,7 @@ final class LocationFetcherTests: XCTestCase {
     }
     
     func testSUTStopsLoadingWhenLocationFound() {
-        manager.authorizationStatus = .authorizedWhenInUse
+        manager.authorizationStatus = .authorizedAlways
         
         Task {
             let exp = expectation(description: "Ensure location assertions are run")
