@@ -2,8 +2,8 @@ import SwiftData
 import SwiftUI
 
 struct LensesList: View {
-    @Query var lenses: [Lens]
-    @State var isEditing: Bool = false
+    @Query private var lenses: [Lens]
+    @State private var isEditing: Bool = false
     
     var body: some View {
         NavigationView {

@@ -9,7 +9,13 @@ struct PhotosList: View {
         NavigationView {
             List {
                 ForEach(photos) { photo in
-                    Text(photo.timestamp.formatted(date: .abbreviated, time: .shortened))
+                    NavigationLink {
+                        PhotoEditor(photo: photo)
+                    } label: {
+                        Text(photo.timestamp
+                            .formatted(date: .abbreviated, time: .shortened)
+                        )
+                    }
                 }
             }
             .navigationTitle("Photos")
@@ -25,7 +31,9 @@ struct PhotosList: View {
             Label("Photos", systemImage: "photo.stack.fill")
         }
         .sheet(isPresented: $isEditing) {
-            PhotoEditor(photo: nil)
+            NavigationView {
+                PhotoEditor(photo: nil)
+            }
         }
     }
 }
