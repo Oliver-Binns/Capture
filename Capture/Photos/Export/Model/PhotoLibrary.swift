@@ -1,4 +1,5 @@
 import Observation
+import CoreImage
 import Photos
 import UIKit
 
@@ -18,6 +19,8 @@ final class PhotoLibrary {
     }()
     
     private(set) var results = FetchResultCollection()
+    
+    var image: UIImage?
     
     func loadItems() async throws {
         switch authorizationStatus {
@@ -48,32 +51,42 @@ final class PhotoLibrary {
         options.isNetworkAccessAllowed = true
         options.isSynchronous = true
         
-        let (image, _) = await imageCachingManager.requestImage(for: asset, options: options)
-        return image
+        return await imageCachingManager.requestImage(for: asset, options: options)
     }
     
-    /*let tiffProperties = [
-        kCGImagePropertyTIFFMake: data.camera?.make,
-        kCGImagePropertyTIFFModel: data.camera?.model,
-        kCGImagePropertyExifLensMake: data.lens?.make,
-        kCGImagePropertyExifLensModel: data.lens?.model,
-    ] as CFDictionary
+    func updateAsset(_ asset: PHAsset, with photo: Photo) async throws {
+        let (input, _) = await asset.contentEditingInput()
         
-    let properties = [
-        kCGImagePropertyExifDictionary as String: tiffProperties
-    ] as CFDictionary*/
-    
-    func updateAsset(_ asset: PHAsset, 
-                     with data: Photo) {
-        PHPhotoLibrary.shared().performChanges {
+        guard let input,
+              let url = input.fullSizeImageURL else {
+            fatalError("Error: cannot get editing input")
+        }
+        
+        let metadata = photo.metadata
+        let adjustmentData = PHAdjustmentData(data: try JSONSerialization.data(withJSONObject: metadata))
+        
+        let editingOutput = PHContentEditingOutput(contentEditingInput: input)
+        editingOutput.adjustmentData = adjustmentData
+        
+        let imageData = try Data(contentsOf: url)
+        let imageRef: CGImageSource = CGImageSourceCreateWithData((imageData as CFData), nil)!
+        let uti: CFString = CGImageSourceGetType(imageRef)!
+        let dataWithEXIF: NSMutableData = NSMutableData(data: imageData)
+        let destination: CGImageDestination = CGImageDestinationCreateWithData((dataWithEXIF as CFMutableData), uti, 1, nil)!
+        CGImageDestinationAddImageFromSource(destination, imageRef, 0, (metadata as CFDictionary))
+        CGImageDestinationFinalize(destination)
+        
+        try dataWithEXIF.write(to: editingOutput.renderedContentURL)
+        
+        try await PHPhotoLibrary.shared().performChanges {
             let request = PHAssetChangeRequest(for: asset)
-            if let location = data.location {
+            if let location = photo.location {
                 request.location = CLLocation(latitude: location.latitude,
                                               longitude: location.longitude)
             }
-            request.creationDate = data.timestamp
+            request.revertAssetContentToOriginal()
+            request.creationDate = photo.timestamp
+            request.contentEditingOutput = editingOutput
         }
     }
 }
-
-

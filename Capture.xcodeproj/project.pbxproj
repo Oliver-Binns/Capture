@@ -21,6 +21,9 @@
 		7CBEBA2F2B80E34300FBA779 /* ThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBEBA2E2B80E34300FBA779 /* ThumbnailView.swift */; };
 		7CBEBA332B80E42C00FBA779 /* FetchResultCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBEBA322B80E42C00FBA779 /* FetchResultCollection.swift */; };
 		7CBEBA362B80E9CA00FBA779 /* View+ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBEBA352B80E9CA00FBA779 /* View+ErrorHandling.swift */; };
+		7CBEBA382B80F02000FBA779 /* Options+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBEBA372B80F02000FBA779 /* Options+Extensions.swift */; };
+		7CBEBA3A2B81151F00FBA779 /* PHAdjustmentData+Capture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBEBA392B81151F00FBA779 /* PHAdjustmentData+Capture.swift */; };
+		7CBEBA3C2B81158900FBA779 /* Photo+Export.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBEBA3B2B81158900FBA779 /* Photo+Export.swift */; };
 		7CF717E92B780A9500A0AA34 /* CaptureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF717E82B780A9500A0AA34 /* CaptureApp.swift */; };
 		7CF717EB2B780A9500A0AA34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF717EA2B780A9500A0AA34 /* ContentView.swift */; };
 		7CF717ED2B780A9600A0AA34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CF717EC2B780A9600A0AA34 /* Assets.xcassets */; };
@@ -71,6 +74,9 @@
 		7CBEBA2E2B80E34300FBA779 /* ThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailView.swift; sourceTree = "<group>"; };
 		7CBEBA322B80E42C00FBA779 /* FetchResultCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchResultCollection.swift; sourceTree = "<group>"; };
 		7CBEBA352B80E9CA00FBA779 /* View+ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ErrorHandling.swift"; sourceTree = "<group>"; };
+		7CBEBA372B80F02000FBA779 /* Options+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Options+Extensions.swift"; sourceTree = "<group>"; };
+		7CBEBA392B81151F00FBA779 /* PHAdjustmentData+Capture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAdjustmentData+Capture.swift"; sourceTree = "<group>"; };
+		7CBEBA3B2B81158900FBA779 /* Photo+Export.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+Export.swift"; sourceTree = "<group>"; };
 		7CF717E52B780A9500A0AA34 /* Capture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF717E82B780A9500A0AA34 /* CaptureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureApp.swift; sourceTree = "<group>"; };
 		7CF717EA2B780A9500A0AA34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -141,6 +147,9 @@
 			children = (
 				7C4BFE6F2B8011E000703BDD /* PHImageCachingManager+Extensions.swift */,
 				7C4BFE772B802D4900703BDD /* PHAsset+Extensions.swift */,
+				7CBEBA372B80F02000FBA779 /* Options+Extensions.swift */,
+				7CBEBA392B81151F00FBA779 /* PHAdjustmentData+Capture.swift */,
+				7CBEBA3B2B81158900FBA779 /* Photo+Export.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -382,8 +391,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CF7180C2B7810F900A0AA34 /* Photo.swift in Sources */,
+				7CBEBA3A2B81151F00FBA779 /* PHAdjustmentData+Capture.swift in Sources */,
 				7CF717EB2B780A9500A0AA34 /* ContentView.swift in Sources */,
 				7C4BFE702B8011E000703BDD /* PHImageCachingManager+Extensions.swift in Sources */,
+				7CBEBA3C2B81158900FBA779 /* Photo+Export.swift in Sources */,
 				7CBEBA332B80E42C00FBA779 /* FetchResultCollection.swift in Sources */,
 				7CF718142B7826BC00A0AA34 /* LocationFetcher.swift in Sources */,
 				7C4BFE722B8012C600703BDD /* PhotoSelector.swift in Sources */,
@@ -409,6 +420,7 @@
 				7CBEBA362B80E9CA00FBA779 /* View+ErrorHandling.swift in Sources */,
 				7CF7180A2B7810E200A0AA34 /* Lens.swift in Sources */,
 				7CF718062B7810A000A0AA34 /* Camera.swift in Sources */,
+				7CBEBA382B80F02000FBA779 /* Options+Extensions.swift in Sources */,
 				7CB5AEBC2B7847E90045CF9C /* LensPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
