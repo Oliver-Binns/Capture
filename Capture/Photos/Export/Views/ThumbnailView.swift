@@ -36,11 +36,11 @@ struct ThumbnailView: View {
     }
     
     func loadImageAsset() async {
-        guard let uiImage = await photoLibrary
+        guard let platformImage = await photoLibrary
             .fetchImage(localIdentifier: localAssetID) else {
             return
         }
-        image = Image(uiImage: uiImage)
+        image = platformImage.image
     }
 }
 

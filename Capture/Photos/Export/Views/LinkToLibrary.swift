@@ -17,7 +17,7 @@ struct LinkToLibrary: View {
         } label: {
             Label("Link to Photos Library", systemImage: "link")
             if let image = photoLibrary.image {
-                Image(uiImage: image)
+                image.image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             }
@@ -85,6 +85,7 @@ struct LinkToLibrary: View {
                         }
                     }
                 }
+                .macOSSheet()
                 .environment(photoLibrary)
             }
         }.showPermissionDeniedError(

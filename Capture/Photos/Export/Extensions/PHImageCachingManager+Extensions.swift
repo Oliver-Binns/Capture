@@ -1,5 +1,9 @@
 import Photos
+#if canImport(UIKit)
 import UIKit
+#elseif canImport(AppKit)
+import AppKit
+#endif
 
 extension PHCachingImageManager {
     func requestImage(
@@ -8,7 +12,7 @@ extension PHCachingImageManager {
         contentMode: PHImageContentMode = .default,
         options: PHImageRequestOptions?
     ) async
-    -> UIImage?  {
+    -> PlatformImage?  {
         await withCheckedContinuation { continuation in
             self.requestImage(for: asset,
                               targetSize: targetSize,
@@ -19,4 +23,3 @@ extension PHCachingImageManager {
         }
     }
 }
-

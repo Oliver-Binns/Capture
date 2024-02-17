@@ -1,7 +1,12 @@
 import Observation
 import CoreImage
 import Photos
+
+#if canImport(UIKit)
 import UIKit
+#elseif canImport(AppKit)
+import AppKit
+#endif
 
 enum PhotoLibraryError: Error {
     case accessDenied
@@ -20,7 +25,7 @@ final class PhotoLibrary {
     
     private(set) var results = FetchResultCollection()
     
-    var image: UIImage?
+    var image: PlatformImage?
     
     func loadItems() async throws {
         switch authorizationStatus {
@@ -40,7 +45,7 @@ final class PhotoLibrary {
         }
     }
     
-    func fetchImage(localIdentifier: String) async -> UIImage? {
+    func fetchImage(localIdentifier: String) async -> PlatformImage? {
         let results = PHAsset.fetchAssets(withLocalIdentifiers: [localIdentifier],
                                           options: nil)
         guard let asset = results.firstObject else { return nil }
