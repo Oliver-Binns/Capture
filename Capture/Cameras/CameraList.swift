@@ -6,7 +6,7 @@ struct CamerasList: View {
     @State private var isEditing: Bool = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(cameras) { camera in
                     NavigationLink("\(camera.make) \(camera.model)") {
@@ -27,7 +27,7 @@ struct CamerasList: View {
         .tabItem {
             Label("Cameras", systemImage: "camera.fill")
         }.sheet(isPresented: $isEditing) {
-            NavigationView {
+            NavigationStack {
                 CameraEditor(camera: nil)
             }
         }

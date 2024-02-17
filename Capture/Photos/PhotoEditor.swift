@@ -69,8 +69,15 @@ struct PhotoEditor: View {
                 
                 Text("Aperture (Lens)")
             }
+            
+            if let photo {
+                Section("Export Data") {
+                    LinkToLibrary(photo: photo)
+                }
+            }
         }
         .navigationTitle("Log Photo")
+        .macOSSheet()
         .onAppear {
             guard !hasAppeared else { return }
             timestamp = photo?.timestamp ?? Date()

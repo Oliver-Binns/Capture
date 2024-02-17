@@ -6,7 +6,7 @@ struct LensesList: View {
     @State private var isEditing: Bool = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(lenses) { lens in
                     NavigationLink("\(lens.make) \(lens.model)") {
@@ -25,7 +25,7 @@ struct LensesList: View {
         }.tabItem {
             Label("Lenses", systemImage: "camera.aperture")
         }.sheet(isPresented: $isEditing) {
-            NavigationView {
+            NavigationStack {
                 LensEditor(lens: nil)
             }
         }

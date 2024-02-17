@@ -41,7 +41,9 @@ struct LensEditor: View {
                     }
                 }
             }
-        }.navigationTitle(navigationTitle)
+        }
+        .navigationTitle(navigationTitle)
+        .macOSSheet()
     }
     
     func save() {
