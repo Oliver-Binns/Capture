@@ -52,6 +52,7 @@
 		A73E7E9B2B9CB345005C86A7 /* Options+ExtensionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7E9A2B9CB345005C86A7 /* Options+ExtensionsTest.swift */; };
 		A73E7E9D2B9CB3EB005C86A7 /* PHAdjustmentData+CaptureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7E9C2B9CB3EB005C86A7 /* PHAdjustmentData+CaptureTests.swift */; };
 		A73E7E9F2B9CB436005C86A7 /* Photo+ExportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7E9E2B9CB436005C86A7 /* Photo+ExportTests.swift */; };
+		A73E7EA22B9CD584005C86A7 /* LensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7EA12B9CD584005C86A7 /* LensTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		A73E7E9A2B9CB345005C86A7 /* Options+ExtensionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Options+ExtensionsTest.swift"; sourceTree = "<group>"; };
 		A73E7E9C2B9CB3EB005C86A7 /* PHAdjustmentData+CaptureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAdjustmentData+CaptureTests.swift"; sourceTree = "<group>"; };
 		A73E7E9E2B9CB436005C86A7 /* Photo+ExportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+ExportTests.swift"; sourceTree = "<group>"; };
+		A73E7EA12B9CD584005C86A7 /* LensTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +285,7 @@
 		7CF7181E2B7834B000A0AA34 /* CaptureTests */ = {
 			isa = PBXGroup;
 			children = (
+				A73E7EA02B9CD57A005C86A7 /* Lenses */,
 				A73E7E972B9CB32A005C86A7 /* Photos */,
 				A73E7E942B9CB1C9005C86A7 /* Extensions */,
 				7CB5AEB42B783E110045CF9C /* Helpers */,
@@ -335,6 +338,14 @@
 				A73E7E9E2B9CB436005C86A7 /* Photo+ExportTests.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A73E7EA02B9CD57A005C86A7 /* Lenses */ = {
+			isa = PBXGroup;
+			children = (
+				A73E7EA12B9CD584005C86A7 /* LensTests.swift */,
+			);
+			path = Lenses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -487,6 +498,7 @@
 				A73E7E962B9CB1D7005C86A7 /* GridItem+ExtensionsTests.swift in Sources */,
 				A73E7E9B2B9CB345005C86A7 /* Options+ExtensionsTest.swift in Sources */,
 				7CF7182A2B78351500A0AA34 /* FakeLocationManager.swift in Sources */,
+				A73E7EA22B9CD584005C86A7 /* LensTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,7 +22,11 @@ final class PhotoTests: XCTestCase {
     @MainActor
     func testMetadata() throws {
         let camera = Camera(make: "Yashica", model: "FX-D Quartz")
-        let lens = Lens(make: "Carl Zeiss", model: "Planar 1,7/50")
+        let lens = Lens(make: "Carl Zeiss",
+                        model: "Planar 1,7/50",
+                        maxAperture: 1.7,
+                        minAperture: 16,
+                        focalLength: 50)
         let location = Location(name: "Greenwich Observatory", latitude: 51.4769, longitude: 0)
         
         let photo = Photo(timestamp: Date(), 
@@ -44,6 +48,9 @@ final class PhotoTests: XCTestCase {
                 kCGImagePropertyExifDictionary as String: [
                     kCGImagePropertyExifLensMake: lens.make,
                     kCGImagePropertyExifLensModel: lens.model,
+                    kCGImagePropertyExifISOSpeed: "400",
+                    kCGImagePropertyExifFocalLength: "50",
+                    kCGImagePropertyExifMaxApertureValue: "1.7"
                 ]
             ] as CFDictionary
         )
