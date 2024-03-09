@@ -9,8 +9,18 @@ struct LensesList: View {
         NavigationStack {
             List {
                 ForEach(lenses) { lens in
-                    NavigationLink("\(lens.make) \(lens.model)") {
+                    NavigationLink {
                         LensEditor(lens: lens)
+                    } label: {
+                        VStack(alignment: .leading) {
+                            Text(lens.description)
+                            
+                            if let details = lens.details {
+                                Text(details)
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
                     }
                 }
             }
