@@ -48,6 +48,9 @@ final class PhotoTests: XCTestCase {
                 kCGImagePropertyExifDictionary as String: [
                     kCGImagePropertyExifLensMake: lens.make,
                     kCGImagePropertyExifLensModel: lens.model,
+                    kCGImagePropertyExifISOSpeed: "400",
+                    kCGImagePropertyExifFocalLength: "50",
+                    kCGImagePropertyExifMaxApertureValue: "1.7"
                 ]
             ] as CFDictionary
         )
