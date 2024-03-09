@@ -14,7 +14,15 @@ struct LensPicker: View {
                     self.lens = lens
                     dismiss()
                 } label: {
-                    Text("\(lens.make) \(lens.model)")
+                    HStack {
+                        Text("\(lens.make) \(lens.model)")
+                        
+                        Spacer()
+                        
+                        if lens == self.lens {
+                            Image(systemName: "checkmark")
+                        }
+                    }
                 }
             }
         }
