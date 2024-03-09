@@ -38,7 +38,10 @@ struct PhotoEditor: View {
     var body: some View {
         Form {
             Section("Preview") {
-                
+                CaptureView(viewModel: CaptureViewModel())
+                    .aspectRatio(3/2, contentMode: .fit)
+                    .padding(.vertical, -12)
+                    .padding(.horizontal, -16)
             }
             
             Section("Metadata") {
