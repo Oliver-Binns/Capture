@@ -53,6 +53,9 @@
 		A73E7E9D2B9CB3EB005C86A7 /* PHAdjustmentData+CaptureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7E9C2B9CB3EB005C86A7 /* PHAdjustmentData+CaptureTests.swift */; };
 		A73E7E9F2B9CB436005C86A7 /* Photo+ExportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7E9E2B9CB436005C86A7 /* Photo+ExportTests.swift */; };
 		A73E7EA22B9CD584005C86A7 /* LensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7EA12B9CD584005C86A7 /* LensTests.swift */; };
+		A73E7EA52B9CFB31005C86A7 /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7EA42B9CFB31005C86A7 /* CaptureView.swift */; };
+		A73E7EA72B9CFF98005C86A7 /* CaptureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7EA62B9CFF98005C86A7 /* CaptureViewModel.swift */; };
+		A73E7EAB2B9D1CD7005C86A7 /* CameraCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7EAA2B9D1CD7005C86A7 /* CameraCaptureSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +117,9 @@
 		A73E7E9C2B9CB3EB005C86A7 /* PHAdjustmentData+CaptureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAdjustmentData+CaptureTests.swift"; sourceTree = "<group>"; };
 		A73E7E9E2B9CB436005C86A7 /* Photo+ExportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+ExportTests.swift"; sourceTree = "<group>"; };
 		A73E7EA12B9CD584005C86A7 /* LensTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensTests.swift; sourceTree = "<group>"; };
+		A73E7EA42B9CFB31005C86A7 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
+		A73E7EA62B9CFF98005C86A7 /* CaptureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewModel.swift; sourceTree = "<group>"; };
+		A73E7EAA2B9D1CD7005C86A7 /* CameraCaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +266,7 @@
 		7CF717F82B780F4A00A0AA34 /* Photos */ = {
 			isa = PBXGroup;
 			children = (
+				A73E7EA32B9CFB22005C86A7 /* Capture */,
 				7C4BFE672B7FFADF00703BDD /* Export */,
 				7CF718102B78220700A0AA34 /* Location */,
 				7CF717F92B780F7F00A0AA34 /* PhotosList.swift */,
@@ -346,6 +353,16 @@
 				A73E7EA12B9CD584005C86A7 /* LensTests.swift */,
 			);
 			path = Lenses;
+			sourceTree = "<group>";
+		};
+		A73E7EA32B9CFB22005C86A7 /* Capture */ = {
+			isa = PBXGroup;
+			children = (
+				A73E7EA42B9CFB31005C86A7 /* CaptureView.swift */,
+				A73E7EA62B9CFF98005C86A7 /* CaptureViewModel.swift */,
+				A73E7EAA2B9D1CD7005C86A7 /* CameraCaptureSession.swift */,
+			);
+			path = Capture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,9 +488,12 @@
 				7CF718042B78104200A0AA34 /* CameraEditor.swift in Sources */,
 				7CD5A6922B811AD50020F08A /* Image+Platforms.swift in Sources */,
 				7CF717FA2B780F7F00A0AA34 /* PhotosList.swift in Sources */,
+				A73E7EA52B9CFB31005C86A7 /* CaptureView.swift in Sources */,
 				7CF718122B78221600A0AA34 /* LocationManager.swift in Sources */,
 				7CB5AEBE2B7848DD0045CF9C /* CameraPicker.swift in Sources */,
+				A73E7EA72B9CFF98005C86A7 /* CaptureViewModel.swift in Sources */,
 				7CF718182B78336D00A0AA34 /* Geocoder.swift in Sources */,
+				A73E7EAB2B9D1CD7005C86A7 /* CameraCaptureSession.swift in Sources */,
 				7CF717FE2B780FB000A0AA34 /* LensEditor.swift in Sources */,
 				7C4BFE782B802D4900703BDD /* PHAsset+Extensions.swift in Sources */,
 				7CBEBA362B80E9CA00FBA779 /* View+ErrorHandling.swift in Sources */,
@@ -645,6 +665,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to access the camera to capture a preview of the photo.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to know your position to attach location-based metadata to your photos.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need to access photos from your Photo Library to attach metadata.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -681,6 +702,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to access the camera to capture a preview of the photo.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to know your position to attach location-based metadata to your photos.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need to access photos from your Photo Library to attach metadata.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
