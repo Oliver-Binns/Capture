@@ -41,7 +41,9 @@ struct CameraEditor: View {
                     }
                 }
             }
-        }.navigationTitle(navigationTitle)
+        }
+        .navigationTitle(navigationTitle)
+        .macOSSheet()
     }
     
     func save() {

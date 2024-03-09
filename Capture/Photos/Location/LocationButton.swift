@@ -33,20 +33,10 @@ struct LocationButton: View {
             }
         }
         .disabled(locationFetcher.isLoading)
-        .alert("Permission Denied",
-               isPresented: $showLocationPermissionError) {
-            Button("Cancel", role: .cancel) { }
-            
-            #if !os(macOS)
-            Button("Open Settings") {
-                if let url = URL(string: UIApplication.openSettingsURLString) {
-                    UIApplication.shared.open(url)
-                }
-            }
-            #endif
-        } message: {
-            Text("You must grant access to location data in the Settings app.")
-        }
+        .showPermissionDeniedError(
+            $showLocationPermissionError,
+            reason: "You must grant access to location data in the Settings app."
+        )
     }
     
     

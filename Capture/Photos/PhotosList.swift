@@ -6,7 +6,7 @@ struct PhotosList: View {
     @State var isEditing: Bool = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(photos) { photo in
                     NavigationLink {
@@ -31,7 +31,7 @@ struct PhotosList: View {
             Label("Photos", systemImage: "photo.stack.fill")
         }
         .sheet(isPresented: $isEditing) {
-            NavigationView {
+            NavigationStack {
                 PhotoEditor(photo: nil)
             }
         }
