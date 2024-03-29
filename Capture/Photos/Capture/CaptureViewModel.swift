@@ -3,8 +3,8 @@ import Foundation
 import SwiftUI
 
 protocol ImageCaptureSession {
-    func startPreview() -> AsyncStream<Image>
-    func capture() -> Image
+    func startPreview() -> AsyncStream<CIImage>
+    func stopPreview()
 }
 
 @Observable
@@ -13,6 +13,8 @@ final class CaptureViewModel {
     private(set) var authorizationStatus: AVAuthorizationStatus
     private(set) var isPreviewing: Bool = false
     private(set) var photo: Image? = nil
+    private(set) var data: Data?
+    
     private var cameraSession: ImageCaptureSession = CameraCaptureSession()
     
     var canCaptureVideo: Bool {
@@ -38,7 +40,12 @@ final class CaptureViewModel {
             return
         }
         isPreviewing = false
-        photo = cameraSession.capture()
+        cameraSession.stopPreview()
+    }
+    
+    func loadFromStorage(data: Data) {
+        self.photo = CIImage(data: data)?.image
+        self.data = data
     }
     
     private func startPhotoOutput() {
@@ -49,7 +56,8 @@ final class CaptureViewModel {
         Task {
             isPreviewing = true
             for await photo in cameraSession.startPreview() {
-                self.photo = photo
+                self.photo = photo.image
+                self.data = photo.data
             }
         }
     }
@@ -60,9 +68,5 @@ final class CaptureViewModel {
             authorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
             startPhotoOutput()
         }
-    }
-    
-    private func capturePhoto() {
-        print("capture photo")
     }
 }

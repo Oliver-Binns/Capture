@@ -6,9 +6,12 @@ struct CaptureView: View {
     var body: some View {
         ZStack {
             if let photo = viewModel.photo {
-                photo
-                    .resizable()
-                    .background(Color.red)
+                Color.clear
+                   .aspectRatio(3/2, contentMode: .fit)
+                   .overlay(
+                        photo.resizable().scaledToFill()
+                   )
+                   .clipped()
             }
             
             VStack(alignment: .trailing) {

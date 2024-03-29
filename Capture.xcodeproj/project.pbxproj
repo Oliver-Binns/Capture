@@ -56,6 +56,7 @@
 		A73E7EA52B9CFB31005C86A7 /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7EA42B9CFB31005C86A7 /* CaptureView.swift */; };
 		A73E7EA72B9CFF98005C86A7 /* CaptureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7EA62B9CFF98005C86A7 /* CaptureViewModel.swift */; };
 		A73E7EAB2B9D1CD7005C86A7 /* CameraCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7EAA2B9D1CD7005C86A7 /* CameraCaptureSession.swift */; };
+		A74C65182BB6B92000C17290 /* CIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C65172BB6B92000C17290 /* CIImage+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		A73E7EA42B9CFB31005C86A7 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
 		A73E7EA62B9CFF98005C86A7 /* CaptureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewModel.swift; sourceTree = "<group>"; };
 		A73E7EAA2B9D1CD7005C86A7 /* CameraCaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureSession.swift; sourceTree = "<group>"; };
+		A74C65172BB6B92000C17290 /* CIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,9 +155,8 @@
 		7C4BFE6A2B80079500703BDD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7C4BFE6B2B8007A700703BDD /* View+Extensions.swift */,
-				7C4BFE742B80147100703BDD /* GridItem+Extensions.swift */,
-				7CBEBA352B80E9CA00FBA779 /* View+ErrorHandling.swift */,
+				A74C65162BB6B91700C17290 /* CoreImage */,
+				A74C65152BB6B90F00C17290 /* SwiftUI */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -365,6 +366,24 @@
 			path = Capture;
 			sourceTree = "<group>";
 		};
+		A74C65152BB6B90F00C17290 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				7C4BFE6B2B8007A700703BDD /* View+Extensions.swift */,
+				7C4BFE742B80147100703BDD /* GridItem+Extensions.swift */,
+				7CBEBA352B80E9CA00FBA779 /* View+ErrorHandling.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		A74C65162BB6B91700C17290 /* CoreImage */ = {
+			isa = PBXGroup;
+			children = (
+				A74C65172BB6B92000C17290 /* CIImage+Extensions.swift */,
+			);
+			path = CoreImage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -490,6 +509,7 @@
 				7CF717FA2B780F7F00A0AA34 /* PhotosList.swift in Sources */,
 				A73E7EA52B9CFB31005C86A7 /* CaptureView.swift in Sources */,
 				7CF718122B78221600A0AA34 /* LocationManager.swift in Sources */,
+				A74C65182BB6B92000C17290 /* CIImage+Extensions.swift in Sources */,
 				7CB5AEBE2B7848DD0045CF9C /* CameraPicker.swift in Sources */,
 				A73E7EA72B9CFF98005C86A7 /* CaptureViewModel.swift in Sources */,
 				7CF718182B78336D00A0AA34 /* Geocoder.swift in Sources */,
