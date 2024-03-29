@@ -60,6 +60,7 @@
 		A74C651B2BB6C4BC00C17290 /* CaptureViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C651A2BB6C4BC00C17290 /* CaptureViewModelTests.swift */; };
 		A74C651D2BB6C4E600C17290 /* CameraCaptureSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C651C2BB6C4E600C17290 /* CameraCaptureSessionTests.swift */; };
 		A74C65262BB6C61400C17290 /* CameraPermissionsStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C65252BB6C61400C17290 /* CameraPermissionsStatus.swift */; };
+		A74C65282BB6C85300C17290 /* MockCameraPermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C65272BB6C85300C17290 /* MockCameraPermissionsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		A74C651A2BB6C4BC00C17290 /* CaptureViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewModelTests.swift; sourceTree = "<group>"; };
 		A74C651C2BB6C4E600C17290 /* CameraCaptureSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureSessionTests.swift; sourceTree = "<group>"; };
 		A74C65252BB6C61400C17290 /* CameraPermissionsStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionsStatus.swift; sourceTree = "<group>"; };
+		A74C65272BB6C85300C17290 /* MockCameraPermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCameraPermissionsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +318,7 @@
 				7CF718272B7834DE00A0AA34 /* FakeGeocoder.swift */,
 				7CF718292B78351500A0AA34 /* FakeLocationManager.swift */,
 				7CF7182B2B7838F200A0AA34 /* MockLocationManager.swift */,
+				A74C65272BB6C85300C17290 /* MockCameraPermissionsManager.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				A73E7E9B2B9CB345005C86A7 /* Options+ExtensionsTest.swift in Sources */,
 				7CF7182A2B78351500A0AA34 /* FakeLocationManager.swift in Sources */,
 				A73E7EA22B9CD584005C86A7 /* LensTests.swift in Sources */,
+				A74C65282BB6C85300C17290 /* MockCameraPermissionsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
