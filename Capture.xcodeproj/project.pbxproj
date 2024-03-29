@@ -59,6 +59,7 @@
 		A74C65182BB6B92000C17290 /* CIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C65172BB6B92000C17290 /* CIImage+Extensions.swift */; };
 		A74C651B2BB6C4BC00C17290 /* CaptureViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C651A2BB6C4BC00C17290 /* CaptureViewModelTests.swift */; };
 		A74C651D2BB6C4E600C17290 /* CameraCaptureSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C651C2BB6C4E600C17290 /* CameraCaptureSessionTests.swift */; };
+		A74C65262BB6C61400C17290 /* CameraPermissionsStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C65252BB6C61400C17290 /* CameraPermissionsStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		A74C65172BB6B92000C17290 /* CIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+Extensions.swift"; sourceTree = "<group>"; };
 		A74C651A2BB6C4BC00C17290 /* CaptureViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewModelTests.swift; sourceTree = "<group>"; };
 		A74C651C2BB6C4E600C17290 /* CameraCaptureSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureSessionTests.swift; sourceTree = "<group>"; };
+		A74C65252BB6C61400C17290 /* CameraPermissionsStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionsStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +369,7 @@
 				A73E7EA42B9CFB31005C86A7 /* CaptureView.swift */,
 				A73E7EA62B9CFF98005C86A7 /* CaptureViewModel.swift */,
 				A73E7EAA2B9D1CD7005C86A7 /* CameraCaptureSession.swift */,
+				A74C65252BB6C61400C17290 /* CameraPermissionsStatus.swift */,
 			);
 			path = Capture;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				7CF717EB2B780A9500A0AA34 /* ContentView.swift in Sources */,
 				7C4BFE702B8011E000703BDD /* PHImageCachingManager+Extensions.swift in Sources */,
 				7CBEBA3C2B81158900FBA779 /* Photo+Export.swift in Sources */,
+				A74C65262BB6C61400C17290 /* CameraPermissionsStatus.swift in Sources */,
 				7CBEBA332B80E42C00FBA779 /* FetchResultCollection.swift in Sources */,
 				7CF718142B7826BC00A0AA34 /* LocationFetcher.swift in Sources */,
 				7C4BFE722B8012C600703BDD /* PhotoSelector.swift in Sources */,

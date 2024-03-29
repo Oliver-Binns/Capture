@@ -10,12 +10,13 @@ protocol ImageCaptureSession {
 @Observable
 @MainActor
 final class CaptureViewModel {
+    private var cameraPermissionManager: CameraPermissionManager.Type
     private(set) var authorizationStatus: AVAuthorizationStatus
     private(set) var isPreviewing: Bool = false
     private(set) var photo: Image? = nil
     private(set) var data: Data?
     
-    private var cameraSession: ImageCaptureSession = CameraCaptureSession()
+    private var captureSession: ImageCaptureSession
     
     var canCaptureVideo: Bool {
         switch authorizationStatus {
@@ -28,9 +29,11 @@ final class CaptureViewModel {
         }
     }
     
-    init() {
-        self.authorizationStatus = AVCaptureDevice
-            .authorizationStatus(for: .video)
+    init(cameraPermissionManager: CameraPermissionManager.Type = AVCaptureDevice.self,
+         captureSesion: ImageCaptureSession = CameraCaptureSession()) {
+        self.cameraPermissionManager = cameraPermissionManager
+        self.authorizationStatus = cameraPermissionManager.authorizationStatus(for: .video)
+        self.captureSession = captureSesion
     }
     
     func takeOrResetPhoto() {
@@ -40,7 +43,7 @@ final class CaptureViewModel {
             return
         }
         isPreviewing = false
-        cameraSession.stopPreview()
+        captureSession.stopPreview()
     }
     
     func loadFromStorage(data: Data) {
@@ -55,7 +58,7 @@ final class CaptureViewModel {
         }
         Task {
             isPreviewing = true
-            for await photo in cameraSession.startPreview() {
+            for await photo in captureSession.startPreview() {
                 self.photo = photo.image
                 self.data = photo.data
             }
@@ -64,8 +67,8 @@ final class CaptureViewModel {
     
     private func requestAuthorization() {
         Task {
-            _ = await AVCaptureDevice.requestAccess(for: .video)
-            authorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
+            _ = await cameraPermissionManager.requestAccess(for: .video)
+            authorizationStatus = cameraPermissionManager.authorizationStatus(for: .video)
             startPhotoOutput()
         }
     }
