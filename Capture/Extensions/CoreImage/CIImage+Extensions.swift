@@ -8,8 +8,8 @@ extension CIImage {
         return Image(decorative: cgImage, scale: 1, orientation: .up)
     }
     
-    private var exportOptions: [CIImageRepresentationOption: Any] {
-        [kCGImageDestinationLossyCompressionQuality as CIImageRepresentationOption : 1.0]
+    var exportOptions: [CIImageRepresentationOption: Any] {
+        [kCGImageDestinationLossyCompressionQuality as CIImageRepresentationOption : 0.7]
     }
     
     var data: Data? {

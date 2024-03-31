@@ -62,6 +62,7 @@
 		A74C65262BB6C61400C17290 /* CameraPermissionsStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C65252BB6C61400C17290 /* CameraPermissionsStatus.swift */; };
 		A74C65282BB6C85300C17290 /* MockCameraPermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C65272BB6C85300C17290 /* MockCameraPermissionsManager.swift */; };
 		A74C652B2BB9877600C17290 /* camera.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A74C652A2BB9877600C17290 /* camera.jpg */; };
+		A763314D2BB9928B0083176C /* CIImage+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763314C2BB9928B0083176C /* CIImage+ExtensionsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		A74C65252BB6C61400C17290 /* CameraPermissionsStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionsStatus.swift; sourceTree = "<group>"; };
 		A74C65272BB6C85300C17290 /* MockCameraPermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCameraPermissionsManager.swift; sourceTree = "<group>"; };
 		A74C652A2BB9877600C17290 /* camera.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera.jpg; sourceTree = "<group>"; };
+		A763314C2BB9928B0083176C /* CIImage+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+ExtensionsTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +331,7 @@
 		A73E7E942B9CB1C9005C86A7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A763314B2BB992810083176C /* CoreImage */,
 				A73E7E952B9CB1D7005C86A7 /* GridItem+ExtensionsTests.swift */,
 			);
 			path = Extensions;
@@ -405,6 +408,14 @@
 				A74C651C2BB6C4E600C17290 /* CameraCaptureSessionTests.swift */,
 			);
 			path = Capture;
+			sourceTree = "<group>";
+		};
+		A763314B2BB992810083176C /* CoreImage */ = {
+			isa = PBXGroup;
+			children = (
+				A763314C2BB9928B0083176C /* CIImage+ExtensionsTests.swift */,
+			);
+			path = CoreImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -564,6 +575,7 @@
 				7CB5AEBA2B7844DA0045CF9C /* MockPlacemark.swift in Sources */,
 				A73E7E962B9CB1D7005C86A7 /* GridItem+ExtensionsTests.swift in Sources */,
 				A73E7E9B2B9CB345005C86A7 /* Options+ExtensionsTest.swift in Sources */,
+				A763314D2BB9928B0083176C /* CIImage+ExtensionsTests.swift in Sources */,
 				7CF7182A2B78351500A0AA34 /* FakeLocationManager.swift in Sources */,
 				A73E7EA22B9CD584005C86A7 /* LensTests.swift in Sources */,
 				A74C65282BB6C85300C17290 /* MockCameraPermissionsManager.swift in Sources */,
