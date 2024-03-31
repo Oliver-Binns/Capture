@@ -19,7 +19,9 @@ struct CaptureView: View {
                 HStack(alignment: .bottom) {
                     Spacer()
                     Button {
-                        viewModel.takeOrResetPhoto()
+                        Task {
+                            try await viewModel.takeOrResetPhoto()
+                        }
                     } label: {
                         Image(systemName: viewModel.isPreviewing ?
                                 "camera.circle.fill" :

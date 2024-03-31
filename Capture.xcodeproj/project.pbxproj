@@ -61,6 +61,7 @@
 		A74C651D2BB6C4E600C17290 /* CameraCaptureSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C651C2BB6C4E600C17290 /* CameraCaptureSessionTests.swift */; };
 		A74C65262BB6C61400C17290 /* CameraPermissionsStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C65252BB6C61400C17290 /* CameraPermissionsStatus.swift */; };
 		A74C65282BB6C85300C17290 /* MockCameraPermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C65272BB6C85300C17290 /* MockCameraPermissionsManager.swift */; };
+		A74C652B2BB9877600C17290 /* camera.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A74C652A2BB9877600C17290 /* camera.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		A74C651C2BB6C4E600C17290 /* CameraCaptureSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureSessionTests.swift; sourceTree = "<group>"; };
 		A74C65252BB6C61400C17290 /* CameraPermissionsStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionsStatus.swift; sourceTree = "<group>"; };
 		A74C65272BB6C85300C17290 /* MockCameraPermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCameraPermissionsManager.swift; sourceTree = "<group>"; };
+		A74C652A2BB9877600C17290 /* camera.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +316,7 @@
 		7CF718262B7834D500A0AA34 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				A74C652A2BB9877600C17290 /* camera.jpg */,
 				7CB5AEB92B7844DA0045CF9C /* MockPlacemark.swift */,
 				7CF718272B7834DE00A0AA34 /* FakeGeocoder.swift */,
 				7CF718292B78351500A0AA34 /* FakeLocationManager.swift */,
@@ -494,6 +497,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A74C652B2BB9877600C17290 /* camera.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

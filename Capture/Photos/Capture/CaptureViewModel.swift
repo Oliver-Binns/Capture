@@ -7,6 +7,10 @@ protocol ImageCaptureSession {
     func stopPreview()
 }
 
+enum CaptureError: Error {
+    case unauthorized
+}
+
 @Observable
 @MainActor
 final class CaptureViewModel {
@@ -36,10 +40,10 @@ final class CaptureViewModel {
         self.captureSession = captureSesion
     }
     
-    func takeOrResetPhoto() {
+    func takeOrResetPhoto() async throws {
         guard isPreviewing else {
             photo = nil
-            startPhotoOutput()
+            try await startPhotoOutput()
             return
         }
         isPreviewing = false
@@ -51,25 +55,26 @@ final class CaptureViewModel {
         self.data = data
     }
     
-    private func startPhotoOutput() {
+    private func startPhotoOutput() async throws {
         guard authorizationStatus != .notDetermined else {
-            requestAuthorization()
+            try await requestAuthorization()
             return
         }
-        Task {
-            isPreviewing = true
-            for await photo in captureSession.startPreview() {
-                self.photo = photo.image
-                self.data = photo.data
-            }
+        
+        guard canCaptureVideo else {
+            throw CaptureError.unauthorized
+        }
+        
+        isPreviewing = true
+        for await photo in captureSession.startPreview() {
+            self.photo = photo.image
+            self.data = photo.data
         }
     }
     
-    private func requestAuthorization() {
-        Task {
-            _ = await cameraPermissionManager.requestAccess(for: .video)
-            authorizationStatus = cameraPermissionManager.authorizationStatus(for: .video)
-            startPhotoOutput()
-        }
+    private func requestAuthorization() async throws {
+        _ = await cameraPermissionManager.requestAccess(for: .video)
+        authorizationStatus = cameraPermissionManager.authorizationStatus(for: .video)
+        try await startPhotoOutput()
     }
 }
