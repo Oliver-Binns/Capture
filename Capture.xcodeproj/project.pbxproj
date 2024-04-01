@@ -63,6 +63,10 @@
 		A74C65282BB6C85300C17290 /* MockCameraPermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C65272BB6C85300C17290 /* MockCameraPermissionsManager.swift */; };
 		A74C652B2BB9877600C17290 /* camera.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A74C652A2BB9877600C17290 /* camera.jpg */; };
 		A763314D2BB9928B0083176C /* CIImage+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763314C2BB9928B0083176C /* CIImage+ExtensionsTests.swift */; };
+		A763315C2BB997200083176C /* MockCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763315B2BB997200083176C /* MockCaptureSession.swift */; };
+		A763315E2BBAA6240083176C /* MockCaptureSessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763315D2BBAA6240083176C /* MockCaptureSessionConfiguration.swift */; };
+		A76331602BBAB4960083176C /* CaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763315F2BBAB4960083176C /* CaptureSession.swift */; };
+		A76331642BBAB86E0083176C /* CaptureSessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76331632BBAB86E0083176C /* CaptureSessionConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +138,10 @@
 		A74C65272BB6C85300C17290 /* MockCameraPermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCameraPermissionsManager.swift; sourceTree = "<group>"; };
 		A74C652A2BB9877600C17290 /* camera.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera.jpg; sourceTree = "<group>"; };
 		A763314C2BB9928B0083176C /* CIImage+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+ExtensionsTests.swift"; sourceTree = "<group>"; };
+		A763315B2BB997200083176C /* MockCaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCaptureSession.swift; sourceTree = "<group>"; };
+		A763315D2BBAA6240083176C /* MockCaptureSessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCaptureSessionConfiguration.swift; sourceTree = "<group>"; };
+		A763315F2BBAB4960083176C /* CaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSession.swift; sourceTree = "<group>"; };
+		A76331632BBAB86E0083176C /* CaptureSessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSessionConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +326,7 @@
 		7CF718262B7834D500A0AA34 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				A76331652BBABE530083176C /* CaptureSession */,
 				A74C652A2BB9877600C17290 /* camera.jpg */,
 				7CB5AEB92B7844DA0045CF9C /* MockPlacemark.swift */,
 				7CF718272B7834DE00A0AA34 /* FakeGeocoder.swift */,
@@ -379,6 +388,8 @@
 				A73E7EA62B9CFF98005C86A7 /* CaptureViewModel.swift */,
 				A73E7EAA2B9D1CD7005C86A7 /* CameraCaptureSession.swift */,
 				A74C65252BB6C61400C17290 /* CameraPermissionsStatus.swift */,
+				A763315F2BBAB4960083176C /* CaptureSession.swift */,
+				A76331632BBAB86E0083176C /* CaptureSessionConfiguration.swift */,
 			);
 			path = Capture;
 			sourceTree = "<group>";
@@ -416,6 +427,15 @@
 				A763314C2BB9928B0083176C /* CIImage+ExtensionsTests.swift */,
 			);
 			path = CoreImage;
+			sourceTree = "<group>";
+		};
+		A76331652BBABE530083176C /* CaptureSession */ = {
+			isa = PBXGroup;
+			children = (
+				A763315D2BBAA6240083176C /* MockCaptureSessionConfiguration.swift */,
+				A763315B2BB997200083176C /* MockCaptureSession.swift */,
+			);
+			path = CaptureSession;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,6 +543,7 @@
 				7CBEBA3A2B81151F00FBA779 /* PHAdjustmentData+Capture.swift in Sources */,
 				7CF717EB2B780A9500A0AA34 /* ContentView.swift in Sources */,
 				7C4BFE702B8011E000703BDD /* PHImageCachingManager+Extensions.swift in Sources */,
+				A76331642BBAB86E0083176C /* CaptureSessionConfiguration.swift in Sources */,
 				7CBEBA3C2B81158900FBA779 /* Photo+Export.swift in Sources */,
 				A74C65262BB6C61400C17290 /* CameraPermissionsStatus.swift in Sources */,
 				7CBEBA332B80E42C00FBA779 /* FetchResultCollection.swift in Sources */,
@@ -548,6 +569,7 @@
 				A74C65182BB6B92000C17290 /* CIImage+Extensions.swift in Sources */,
 				7CB5AEBE2B7848DD0045CF9C /* CameraPicker.swift in Sources */,
 				A73E7EA72B9CFF98005C86A7 /* CaptureViewModel.swift in Sources */,
+				A76331602BBAB4960083176C /* CaptureSession.swift in Sources */,
 				7CF718182B78336D00A0AA34 /* Geocoder.swift in Sources */,
 				A73E7EAB2B9D1CD7005C86A7 /* CameraCaptureSession.swift in Sources */,
 				7CF717FE2B780FB000A0AA34 /* LensEditor.swift in Sources */,
@@ -564,6 +586,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A763315E2BBAA6240083176C /* MockCaptureSessionConfiguration.swift in Sources */,
 				7CF718202B7834B000A0AA34 /* CaptureTests.swift in Sources */,
 				7CF718282B7834DE00A0AA34 /* FakeGeocoder.swift in Sources */,
 				A73E7E9F2B9CB436005C86A7 /* Photo+ExportTests.swift in Sources */,
@@ -578,6 +601,7 @@
 				A763314D2BB9928B0083176C /* CIImage+ExtensionsTests.swift in Sources */,
 				7CF7182A2B78351500A0AA34 /* FakeLocationManager.swift in Sources */,
 				A73E7EA22B9CD584005C86A7 /* LensTests.swift in Sources */,
+				A763315C2BB997200083176C /* MockCaptureSession.swift in Sources */,
 				A74C65282BB6C85300C17290 /* MockCameraPermissionsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

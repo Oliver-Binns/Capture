@@ -4,116 +4,65 @@ import SwiftUI
 import UIKit
 #endif
 
-final class CameraCaptureSession: NSObject {
-    private let captureSession = AVCaptureSession()
+final class CameraCaptureSession<Configuration: CaptureSessionConfiguration>: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
+    private let configuration: Configuration
+    private var captureSession: Configuration.CS {
+        configuration.session
+    }
     
     private let sessionQueue: DispatchQueue
-    private var captureDevice: AVCaptureDevice? {
-        didSet {
-            guard let captureDevice = captureDevice else { return }
-            sessionQueue.async {
-                self.updateSessionForCaptureDevice(captureDevice)
-            }
-        }
-    }
     
-    private var deviceInput: AVCaptureDeviceInput?
-    private var photoOutput: AVCapturePhotoOutput?
-    private var videoOutput: AVCaptureVideoDataOutput?
-    
+    private var deviceInput: Configuration.CS.DeviceInput?
+    private var videoOutput: Configuration.CS.DeviceOutput?
     private var isCaptureSessionConfigured: Bool = false
+    
     private var continuation: AsyncStream<CIImage>.Continuation?
     
-    override init() {
-        sessionQueue = DispatchQueue(label: "session queue", qos: .userInitiated)
-        captureDevice = AVCaptureDevice.default(for: .video)
+    init(configuration: Configuration = AVCaptureSessionConfiguration(),
+         sessionQueue: DispatchQueue = DispatchQueue(label: "session queue", qos: .userInitiated)) {
+        self.configuration = configuration
+        self.sessionQueue = sessionQueue
+        super.init()
     }
     
-    private func updateSessionForCaptureDevice(_ captureDevice: AVCaptureDevice) {
-        guard isCaptureSessionConfigured else { return }
-        
-        captureSession.beginConfiguration()
-        defer { captureSession.commitConfiguration() }
-
-        for input in captureSession.inputs {
-            if let deviceInput = input as? AVCaptureDeviceInput {
-                captureSession.removeInput(deviceInput)
+    private func resumeVideoCapture() {
+        sessionQueue.async { [self] in
+            if !isCaptureSessionConfigured {
+                configureCaptureSession()
             }
-        }
-        
-        if let deviceInput = try? AVCaptureDeviceInput(device: captureDevice) {
-            if !captureSession.inputs.contains(deviceInput), captureSession.canAddInput(deviceInput) {
-                captureSession.addInput(deviceInput)
+            if !captureSession.isRunning {
+                captureSession.startRunning()
             }
         }
     }
     
     private func configureCaptureSession() {
-        if isCaptureSessionConfigured {
-            if !captureSession.isRunning {
-                sessionQueue.async { [self] in
-                    self.captureSession.startRunning()
-                }
-            }
+        captureSession.beginConfiguration()
+        captureSession.sessionPreset = .photo
+        
+        guard let deviceInput = try? configuration.input() else {
             return
         }
-        
-        sessionQueue.async { [self] in
-            self.configureCaptureSession { success in
-                guard success else { return }
-                self.captureSession.startRunning()
-            }
-        }
-    }
-    
-    private func configureCaptureSession(completionHandler: (_ success: Bool) -> Void) {
-        var success = false
-        
-        self.captureSession.beginConfiguration()
-        
-        defer {
-            self.captureSession.commitConfiguration()
-            completionHandler(success)
-        }
-        
-        guard
-            let captureDevice = captureDevice,
-            let deviceInput = try? AVCaptureDeviceInput(device: captureDevice)
-        else {
-            return
-        }
-        
-        let photoOutput = AVCapturePhotoOutput()
-                        
-        captureSession.sessionPreset = AVCaptureSession.Preset.photo
 
-        let videoOutput = AVCaptureVideoDataOutput()
-        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "VideoDataOutputQueue"))
+        guard let delegate = self as? Configuration.Delegate else {
+            preconditionFailure("Expected CameraCaptureSession to be a delegate of CaptureSessionConfiguration")
+        }
+        let videoOutput = configuration.output(delegate: delegate)
   
-        guard captureSession.canAddInput(deviceInput) else {
-            return
-        }
-        guard captureSession.canAddOutput(photoOutput) else {
-            return
-        }
-        guard captureSession.canAddOutput(videoOutput) else {
+        guard captureSession.canAddInput(deviceInput),
+              captureSession.canAddOutput(videoOutput) else {
             return
         }
         
         captureSession.addInput(deviceInput)
-        captureSession.addOutput(photoOutput)
         captureSession.addOutput(videoOutput)
         
         self.deviceInput = deviceInput
-        self.photoOutput = photoOutput
         self.videoOutput = videoOutput
-        
-        photoOutput.isHighResolutionCaptureEnabled = true
-        photoOutput.maxPhotoQualityPrioritization = .balanced
         
         isCaptureSessionConfigured = true
         
-        success = true
+        captureSession.commitConfiguration()
     }
     
     private func closeCaptureSession() {
@@ -125,23 +74,7 @@ final class CameraCaptureSession: NSObject {
             }
         }
     }
-}
-
-extension CameraCaptureSession: ImageCaptureSession {
-    func startPreview() -> AsyncStream<CIImage> {
-        AsyncStream { continuation in
-            configureCaptureSession()
-            self.continuation = continuation
-        }
-    }
     
-    func stopPreview() {
-        continuation?.finish()
-        continuation = nil
-    }
-}
-
-extension CameraCaptureSession: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let pixelBuffer = sampleBuffer.imageBuffer else { return }
 
@@ -169,4 +102,20 @@ extension CameraCaptureSession: AVCaptureVideoDataOutputSampleBufferDelegate {
         .portrait
     }
     #endif
+}
+
+extension CameraCaptureSession: ImageCaptureSession {
+    func startPreview() -> AsyncStream<CIImage> {
+        AsyncStream { continuation in
+            resumeVideoCapture()
+            self.continuation = continuation
+        }
+    }
+    
+    func stopPreview() {
+        continuation?.finish()
+        continuation = nil
+        
+        closeCaptureSession()
+    }
 }
