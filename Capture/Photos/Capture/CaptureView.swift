@@ -4,33 +4,40 @@ struct CaptureView: View {
     var viewModel: CaptureViewModel
     
     var body: some View {
-        ZStack {
-            if let photo = viewModel.photo {
-                Color.clear
-                   .aspectRatio(3/2, contentMode: .fit)
-                   .overlay(
-                        photo.resizable().scaledToFill()
-                   )
-                   .clipped()
+        Button {
+            Task {
+                try await viewModel.takeOrResetPhoto()
             }
-            
-            VStack(alignment: .trailing) {
-                Spacer()
-                HStack(alignment: .bottom) {
-                    Spacer()
-                    Button {
-                        Task {
-                            try await viewModel.takeOrResetPhoto()
+        } label: {
+            if let photo = viewModel.photo {
+                ZStack {
+                    Color.clear
+                        .aspectRatio(3/2, contentMode: .fit)
+                        .overlay(
+                            photo.resizable().scaledToFill()
+                        )
+                        .clipped()
+                    
+                    VStack(alignment: .trailing) {
+                        Spacer()
+                        HStack(alignment: .bottom) {
+                            Spacer()
+                            
+                            Image(systemName: viewModel.isPreviewing ?
+                                  "camera.circle.fill" :
+                                    "arrow.uturn.left.circle.fill"
+                            ).font(.largeTitle)
+                                .accessibilityLabel("Capture image")
+                                .padding()
                         }
-                    } label: {
-                        Image(systemName: viewModel.isPreviewing ?
-                                "camera.circle.fill" :
-                                "arrow.uturn.left.circle.fill"
-                        ).font(.largeTitle)
                     }
-                    .accessibilityLabel("Capture image")
-                    .padding()
                 }
+            } else {
+                ContentUnavailableView("Tap to save a preview",
+                                       systemImage: "camera.circle.fill")
+                    .background(.systemGray4)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .foregroundStyle(.label)
             }
         }
     }

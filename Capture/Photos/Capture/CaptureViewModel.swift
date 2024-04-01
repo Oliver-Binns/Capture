@@ -42,7 +42,6 @@ final class CaptureViewModel {
     
     func takeOrResetPhoto() async throws {
         guard isPreviewing else {
-            photo = nil
             try await startPhotoOutput()
             return
         }

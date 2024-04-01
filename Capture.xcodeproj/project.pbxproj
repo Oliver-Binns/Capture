@@ -68,6 +68,7 @@
 		A76331602BBAB4960083176C /* CaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763315F2BBAB4960083176C /* CaptureSession.swift */; };
 		A76331642BBAB86E0083176C /* CaptureSessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76331632BBAB86E0083176C /* CaptureSessionConfiguration.swift */; };
 		A76331672BBADD750083176C /* CMSampleBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76331662BBADD750083176C /* CMSampleBuffer.swift */; };
+		A76331692BBAE84B0083176C /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76331682BBAE84B0083176C /* Color+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +145,7 @@
 		A763315F2BBAB4960083176C /* CaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSession.swift; sourceTree = "<group>"; };
 		A76331632BBAB86E0083176C /* CaptureSessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSessionConfiguration.swift; sourceTree = "<group>"; };
 		A76331662BBADD750083176C /* CMSampleBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMSampleBuffer.swift; sourceTree = "<group>"; };
+		A76331682BBAE84B0083176C /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,6 +405,7 @@
 				7C4BFE6B2B8007A700703BDD /* View+Extensions.swift */,
 				7C4BFE742B80147100703BDD /* GridItem+Extensions.swift */,
 				7CBEBA352B80E9CA00FBA779 /* View+ErrorHandling.swift */,
+				A76331682BBAE84B0083176C /* Color+Extensions.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				7C4BFE782B802D4900703BDD /* PHAsset+Extensions.swift in Sources */,
 				7CBEBA362B80E9CA00FBA779 /* View+ErrorHandling.swift in Sources */,
 				7CF7180A2B7810E200A0AA34 /* Lens.swift in Sources */,
+				A76331692BBAE84B0083176C /* Color+Extensions.swift in Sources */,
 				7CF718062B7810A000A0AA34 /* Camera.swift in Sources */,
 				7CBEBA382B80F02000FBA779 /* Options+Extensions.swift in Sources */,
 				7CB5AEBC2B7847E90045CF9C /* LensPicker.swift in Sources */,
