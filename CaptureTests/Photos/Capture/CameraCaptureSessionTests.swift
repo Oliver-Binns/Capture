@@ -1,3 +1,4 @@
+import AVFoundation
 @testable import Capture
 import XCTest
 
@@ -36,6 +37,34 @@ final class CameraCaptureSessionTests: XCTestCase {
         for await _ in stream {
             XCTFail("Expected stream to be finished")
         }
+    }
+    
+    func testStopRunningStopsCaptureSession() {
+        _ = sut.startPreview()
+        wait(for: self.captureSession.isRunning)
+        
+        sut.stopPreview()
+        wait(for: !self.captureSession.isRunning)
+    }
+    
+    func testCaptureOutputYieldsAValue() throws {
+        let stream = sut.startPreview()
+        
+        let exp = expectation(description: "Wait for CIImage to be output")
+        Task {
+            for await _ in stream {
+                exp.fulfill()
+            }
+        }
+        
+        let output = AVCaptureVideoDataOutput()
+        let connection = AVCaptureConnection(inputPorts: [], output: output)
+        sut.captureOutput(output,
+                          didOutput: .mock,
+                          from: connection)
+        
+        wait(for: [exp])
+        sut.stopPreview()
     }
     
     func testRestartDoesntReconfigureSession() {

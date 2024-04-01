@@ -67,6 +67,7 @@
 		A763315E2BBAA6240083176C /* MockCaptureSessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763315D2BBAA6240083176C /* MockCaptureSessionConfiguration.swift */; };
 		A76331602BBAB4960083176C /* CaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763315F2BBAB4960083176C /* CaptureSession.swift */; };
 		A76331642BBAB86E0083176C /* CaptureSessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76331632BBAB86E0083176C /* CaptureSessionConfiguration.swift */; };
+		A76331672BBADD750083176C /* CMSampleBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76331662BBADD750083176C /* CMSampleBuffer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,7 @@
 		A763315D2BBAA6240083176C /* MockCaptureSessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCaptureSessionConfiguration.swift; sourceTree = "<group>"; };
 		A763315F2BBAB4960083176C /* CaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSession.swift; sourceTree = "<group>"; };
 		A76331632BBAB86E0083176C /* CaptureSessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSessionConfiguration.swift; sourceTree = "<group>"; };
+		A76331662BBADD750083176C /* CMSampleBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMSampleBuffer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +335,7 @@
 				7CF718292B78351500A0AA34 /* FakeLocationManager.swift */,
 				7CF7182B2B7838F200A0AA34 /* MockLocationManager.swift */,
 				A74C65272BB6C85300C17290 /* MockCameraPermissionsManager.swift */,
+				A76331662BBADD750083176C /* CMSampleBuffer.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A763315E2BBAA6240083176C /* MockCaptureSessionConfiguration.swift in Sources */,
+				A76331672BBADD750083176C /* CMSampleBuffer.swift in Sources */,
 				7CF718202B7834B000A0AA34 /* CaptureTests.swift in Sources */,
 				7CF718282B7834DE00A0AA34 /* FakeGeocoder.swift in Sources */,
 				A73E7E9F2B9CB436005C86A7 /* Photo+ExportTests.swift in Sources */,
