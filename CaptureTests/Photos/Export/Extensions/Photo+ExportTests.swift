@@ -29,7 +29,8 @@ final class PhotoTests: XCTestCase {
                         focalLength: 50)
         let location = Location(name: "Greenwich Observatory", latitude: 51.4769, longitude: 0)
         
-        let photo = Photo(timestamp: Date(), 
+        let photo = Photo(preview: nil,
+                          timestamp: Date(), 
                           location: location,
                           camera: camera, lens: lens,
                           filmSpeed: .fourHundred)

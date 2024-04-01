@@ -1,6 +1,7 @@
 import CoreLocation
 import SwiftUI
 
+@MainActor
 struct PhotoEditor: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
@@ -11,12 +12,13 @@ struct PhotoEditor: View {
         self.photo = photo
     }
     
+    private var captureViewModel = CaptureViewModel()
     @State private var timestamp: Date = Date()
     @State private var location: Location?
     @State private var camera: Camera?
     @State private var lens: Lens?
     @State private var filmSpeed: FilmSpeed = .fourHundred
-    
+
     @State private var hasAppeared: Bool = false
     
     private var cameraText: String {
@@ -38,7 +40,10 @@ struct PhotoEditor: View {
     var body: some View {
         Form {
             Section("Preview") {
-                
+                CaptureView(viewModel: captureViewModel)
+                    .aspectRatio(3/2, contentMode: .fit)
+                    .padding(.vertical, -12)
+                    .padding(.horizontal, -16)
             }
             
             Section("Metadata") {
@@ -80,6 +85,9 @@ struct PhotoEditor: View {
         .macOSSheet()
         .onAppear {
             guard !hasAppeared else { return }
+            if let preview = photo?.preview {
+                captureViewModel.loadFromStorage(data: preview)
+            }
             timestamp = photo?.timestamp ?? Date()
             location = photo?.location
             camera = photo?.camera
@@ -107,6 +115,7 @@ struct PhotoEditor: View {
     
     private func save() {
         if let photo {
+            photo.preview = captureViewModel.data
             photo.timestamp = timestamp
             photo.location = location
             photo.camera = camera
@@ -114,7 +123,8 @@ struct PhotoEditor: View {
             photo.filmSpeed = filmSpeed
         } else {
             modelContext.insert(
-                Photo(timestamp: timestamp,
+                Photo(preview: captureViewModel.data,
+                      timestamp: timestamp,
                       location: location,
                       camera: camera,
                       lens: lens,

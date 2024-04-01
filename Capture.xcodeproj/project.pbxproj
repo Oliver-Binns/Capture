@@ -53,6 +53,22 @@
 		A73E7E9D2B9CB3EB005C86A7 /* PHAdjustmentData+CaptureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7E9C2B9CB3EB005C86A7 /* PHAdjustmentData+CaptureTests.swift */; };
 		A73E7E9F2B9CB436005C86A7 /* Photo+ExportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7E9E2B9CB436005C86A7 /* Photo+ExportTests.swift */; };
 		A73E7EA22B9CD584005C86A7 /* LensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7EA12B9CD584005C86A7 /* LensTests.swift */; };
+		A73E7EA52B9CFB31005C86A7 /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7EA42B9CFB31005C86A7 /* CaptureView.swift */; };
+		A73E7EA72B9CFF98005C86A7 /* CaptureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7EA62B9CFF98005C86A7 /* CaptureViewModel.swift */; };
+		A73E7EAB2B9D1CD7005C86A7 /* CameraCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E7EAA2B9D1CD7005C86A7 /* CameraCaptureSession.swift */; };
+		A74C65182BB6B92000C17290 /* CIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C65172BB6B92000C17290 /* CIImage+Extensions.swift */; };
+		A74C651B2BB6C4BC00C17290 /* CaptureViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C651A2BB6C4BC00C17290 /* CaptureViewModelTests.swift */; };
+		A74C651D2BB6C4E600C17290 /* CameraCaptureSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C651C2BB6C4E600C17290 /* CameraCaptureSessionTests.swift */; };
+		A74C65262BB6C61400C17290 /* CameraPermissionsStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C65252BB6C61400C17290 /* CameraPermissionsStatus.swift */; };
+		A74C65282BB6C85300C17290 /* MockCameraPermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C65272BB6C85300C17290 /* MockCameraPermissionsManager.swift */; };
+		A74C652B2BB9877600C17290 /* camera.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A74C652A2BB9877600C17290 /* camera.jpg */; };
+		A763314D2BB9928B0083176C /* CIImage+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763314C2BB9928B0083176C /* CIImage+ExtensionsTests.swift */; };
+		A763315C2BB997200083176C /* MockCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763315B2BB997200083176C /* MockCaptureSession.swift */; };
+		A763315E2BBAA6240083176C /* MockCaptureSessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763315D2BBAA6240083176C /* MockCaptureSessionConfiguration.swift */; };
+		A76331602BBAB4960083176C /* CaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763315F2BBAB4960083176C /* CaptureSession.swift */; };
+		A76331642BBAB86E0083176C /* CaptureSessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76331632BBAB86E0083176C /* CaptureSessionConfiguration.swift */; };
+		A76331672BBADD750083176C /* CMSampleBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76331662BBADD750083176C /* CMSampleBuffer.swift */; };
+		A76331692BBAE84B0083176C /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76331682BBAE84B0083176C /* Color+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +130,22 @@
 		A73E7E9C2B9CB3EB005C86A7 /* PHAdjustmentData+CaptureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAdjustmentData+CaptureTests.swift"; sourceTree = "<group>"; };
 		A73E7E9E2B9CB436005C86A7 /* Photo+ExportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+ExportTests.swift"; sourceTree = "<group>"; };
 		A73E7EA12B9CD584005C86A7 /* LensTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensTests.swift; sourceTree = "<group>"; };
+		A73E7EA42B9CFB31005C86A7 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
+		A73E7EA62B9CFF98005C86A7 /* CaptureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewModel.swift; sourceTree = "<group>"; };
+		A73E7EAA2B9D1CD7005C86A7 /* CameraCaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureSession.swift; sourceTree = "<group>"; };
+		A74C65172BB6B92000C17290 /* CIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+Extensions.swift"; sourceTree = "<group>"; };
+		A74C651A2BB6C4BC00C17290 /* CaptureViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewModelTests.swift; sourceTree = "<group>"; };
+		A74C651C2BB6C4E600C17290 /* CameraCaptureSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureSessionTests.swift; sourceTree = "<group>"; };
+		A74C65252BB6C61400C17290 /* CameraPermissionsStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionsStatus.swift; sourceTree = "<group>"; };
+		A74C65272BB6C85300C17290 /* MockCameraPermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCameraPermissionsManager.swift; sourceTree = "<group>"; };
+		A74C652A2BB9877600C17290 /* camera.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera.jpg; sourceTree = "<group>"; };
+		A763314C2BB9928B0083176C /* CIImage+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+ExtensionsTests.swift"; sourceTree = "<group>"; };
+		A763315B2BB997200083176C /* MockCaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCaptureSession.swift; sourceTree = "<group>"; };
+		A763315D2BBAA6240083176C /* MockCaptureSessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCaptureSessionConfiguration.swift; sourceTree = "<group>"; };
+		A763315F2BBAB4960083176C /* CaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSession.swift; sourceTree = "<group>"; };
+		A76331632BBAB86E0083176C /* CaptureSessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSessionConfiguration.swift; sourceTree = "<group>"; };
+		A76331662BBADD750083176C /* CMSampleBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMSampleBuffer.swift; sourceTree = "<group>"; };
+		A76331682BBAE84B0083176C /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,9 +179,8 @@
 		7C4BFE6A2B80079500703BDD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7C4BFE6B2B8007A700703BDD /* View+Extensions.swift */,
-				7C4BFE742B80147100703BDD /* GridItem+Extensions.swift */,
-				7CBEBA352B80E9CA00FBA779 /* View+ErrorHandling.swift */,
+				A74C65162BB6B91700C17290 /* CoreImage */,
+				A74C65152BB6B90F00C17290 /* SwiftUI */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -260,6 +291,7 @@
 		7CF717F82B780F4A00A0AA34 /* Photos */ = {
 			isa = PBXGroup;
 			children = (
+				A73E7EA32B9CFB22005C86A7 /* Capture */,
 				7C4BFE672B7FFADF00703BDD /* Export */,
 				7CF718102B78220700A0AA34 /* Location */,
 				7CF717F92B780F7F00A0AA34 /* PhotosList.swift */,
@@ -298,10 +330,14 @@
 		7CF718262B7834D500A0AA34 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				A76331652BBABE530083176C /* CaptureSession */,
+				A74C652A2BB9877600C17290 /* camera.jpg */,
 				7CB5AEB92B7844DA0045CF9C /* MockPlacemark.swift */,
 				7CF718272B7834DE00A0AA34 /* FakeGeocoder.swift */,
 				7CF718292B78351500A0AA34 /* FakeLocationManager.swift */,
 				7CF7182B2B7838F200A0AA34 /* MockLocationManager.swift */,
+				A74C65272BB6C85300C17290 /* MockCameraPermissionsManager.swift */,
+				A76331662BBADD750083176C /* CMSampleBuffer.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -309,6 +345,7 @@
 		A73E7E942B9CB1C9005C86A7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A763314B2BB992810083176C /* CoreImage */,
 				A73E7E952B9CB1D7005C86A7 /* GridItem+ExtensionsTests.swift */,
 			);
 			path = Extensions;
@@ -317,6 +354,7 @@
 		A73E7E972B9CB32A005C86A7 /* Photos */ = {
 			isa = PBXGroup;
 			children = (
+				A74C65192BB6C4B100C17290 /* Capture */,
 				A73E7E982B9CB32F005C86A7 /* Export */,
 			);
 			path = Photos;
@@ -346,6 +384,64 @@
 				A73E7EA12B9CD584005C86A7 /* LensTests.swift */,
 			);
 			path = Lenses;
+			sourceTree = "<group>";
+		};
+		A73E7EA32B9CFB22005C86A7 /* Capture */ = {
+			isa = PBXGroup;
+			children = (
+				A73E7EA42B9CFB31005C86A7 /* CaptureView.swift */,
+				A73E7EA62B9CFF98005C86A7 /* CaptureViewModel.swift */,
+				A73E7EAA2B9D1CD7005C86A7 /* CameraCaptureSession.swift */,
+				A74C65252BB6C61400C17290 /* CameraPermissionsStatus.swift */,
+				A763315F2BBAB4960083176C /* CaptureSession.swift */,
+				A76331632BBAB86E0083176C /* CaptureSessionConfiguration.swift */,
+			);
+			path = Capture;
+			sourceTree = "<group>";
+		};
+		A74C65152BB6B90F00C17290 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				7C4BFE6B2B8007A700703BDD /* View+Extensions.swift */,
+				7C4BFE742B80147100703BDD /* GridItem+Extensions.swift */,
+				7CBEBA352B80E9CA00FBA779 /* View+ErrorHandling.swift */,
+				A76331682BBAE84B0083176C /* Color+Extensions.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		A74C65162BB6B91700C17290 /* CoreImage */ = {
+			isa = PBXGroup;
+			children = (
+				A74C65172BB6B92000C17290 /* CIImage+Extensions.swift */,
+			);
+			path = CoreImage;
+			sourceTree = "<group>";
+		};
+		A74C65192BB6C4B100C17290 /* Capture */ = {
+			isa = PBXGroup;
+			children = (
+				A74C651A2BB6C4BC00C17290 /* CaptureViewModelTests.swift */,
+				A74C651C2BB6C4E600C17290 /* CameraCaptureSessionTests.swift */,
+			);
+			path = Capture;
+			sourceTree = "<group>";
+		};
+		A763314B2BB992810083176C /* CoreImage */ = {
+			isa = PBXGroup;
+			children = (
+				A763314C2BB9928B0083176C /* CIImage+ExtensionsTests.swift */,
+			);
+			path = CoreImage;
+			sourceTree = "<group>";
+		};
+		A76331652BBABE530083176C /* CaptureSession */ = {
+			isa = PBXGroup;
+			children = (
+				A763315D2BBAA6240083176C /* MockCaptureSessionConfiguration.swift */,
+				A763315B2BB997200083176C /* MockCaptureSession.swift */,
+			);
+			path = CaptureSession;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,6 +534,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A74C652B2BB9877600C17290 /* camera.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +549,9 @@
 				7CBEBA3A2B81151F00FBA779 /* PHAdjustmentData+Capture.swift in Sources */,
 				7CF717EB2B780A9500A0AA34 /* ContentView.swift in Sources */,
 				7C4BFE702B8011E000703BDD /* PHImageCachingManager+Extensions.swift in Sources */,
+				A76331642BBAB86E0083176C /* CaptureSessionConfiguration.swift in Sources */,
 				7CBEBA3C2B81158900FBA779 /* Photo+Export.swift in Sources */,
+				A74C65262BB6C61400C17290 /* CameraPermissionsStatus.swift in Sources */,
 				7CBEBA332B80E42C00FBA779 /* FetchResultCollection.swift in Sources */,
 				7CF718142B7826BC00A0AA34 /* LocationFetcher.swift in Sources */,
 				7C4BFE722B8012C600703BDD /* PhotoSelector.swift in Sources */,
@@ -471,13 +570,19 @@
 				7CF718042B78104200A0AA34 /* CameraEditor.swift in Sources */,
 				7CD5A6922B811AD50020F08A /* Image+Platforms.swift in Sources */,
 				7CF717FA2B780F7F00A0AA34 /* PhotosList.swift in Sources */,
+				A73E7EA52B9CFB31005C86A7 /* CaptureView.swift in Sources */,
 				7CF718122B78221600A0AA34 /* LocationManager.swift in Sources */,
+				A74C65182BB6B92000C17290 /* CIImage+Extensions.swift in Sources */,
 				7CB5AEBE2B7848DD0045CF9C /* CameraPicker.swift in Sources */,
+				A73E7EA72B9CFF98005C86A7 /* CaptureViewModel.swift in Sources */,
+				A76331602BBAB4960083176C /* CaptureSession.swift in Sources */,
 				7CF718182B78336D00A0AA34 /* Geocoder.swift in Sources */,
+				A73E7EAB2B9D1CD7005C86A7 /* CameraCaptureSession.swift in Sources */,
 				7CF717FE2B780FB000A0AA34 /* LensEditor.swift in Sources */,
 				7C4BFE782B802D4900703BDD /* PHAsset+Extensions.swift in Sources */,
 				7CBEBA362B80E9CA00FBA779 /* View+ErrorHandling.swift in Sources */,
 				7CF7180A2B7810E200A0AA34 /* Lens.swift in Sources */,
+				A76331692BBAE84B0083176C /* Color+Extensions.swift in Sources */,
 				7CF718062B7810A000A0AA34 /* Camera.swift in Sources */,
 				7CBEBA382B80F02000FBA779 /* Options+Extensions.swift in Sources */,
 				7CB5AEBC2B7847E90045CF9C /* LensPicker.swift in Sources */,
@@ -488,17 +593,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A763315E2BBAA6240083176C /* MockCaptureSessionConfiguration.swift in Sources */,
+				A76331672BBADD750083176C /* CMSampleBuffer.swift in Sources */,
 				7CF718202B7834B000A0AA34 /* CaptureTests.swift in Sources */,
 				7CF718282B7834DE00A0AA34 /* FakeGeocoder.swift in Sources */,
 				A73E7E9F2B9CB436005C86A7 /* Photo+ExportTests.swift in Sources */,
+				A74C651D2BB6C4E600C17290 /* CameraCaptureSessionTests.swift in Sources */,
 				A73E7E9D2B9CB3EB005C86A7 /* PHAdjustmentData+CaptureTests.swift in Sources */,
 				7CF7182C2B7838F200A0AA34 /* MockLocationManager.swift in Sources */,
+				A74C651B2BB6C4BC00C17290 /* CaptureViewModelTests.swift in Sources */,
 				7CB5AEB62B783E1F0045CF9C /* XCTest+Helpers.swift in Sources */,
 				7CB5AEBA2B7844DA0045CF9C /* MockPlacemark.swift in Sources */,
 				A73E7E962B9CB1D7005C86A7 /* GridItem+ExtensionsTests.swift in Sources */,
 				A73E7E9B2B9CB345005C86A7 /* Options+ExtensionsTest.swift in Sources */,
+				A763314D2BB9928B0083176C /* CIImage+ExtensionsTests.swift in Sources */,
 				7CF7182A2B78351500A0AA34 /* FakeLocationManager.swift in Sources */,
 				A73E7EA22B9CD584005C86A7 /* LensTests.swift in Sources */,
+				A763315C2BB997200083176C /* MockCaptureSession.swift in Sources */,
+				A74C65282BB6C85300C17290 /* MockCameraPermissionsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +757,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to access the camera to capture a preview of the photo.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to know your position to attach location-based metadata to your photos.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need to access photos from your Photo Library to attach metadata.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -681,6 +794,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to access the camera to capture a preview of the photo.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to know your position to attach location-based metadata to your photos.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need to access photos from your Photo Library to attach metadata.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
