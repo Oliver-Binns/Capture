@@ -1,6 +1,6 @@
 import SwiftData
 import SwiftUI
-
+/*
 struct PhotosList: View {
     @Query var photos: [Photo]
     @State var isEditing: Bool = false
@@ -37,3 +37,4 @@ struct PhotosList: View {
         }
     }
 }
+*/

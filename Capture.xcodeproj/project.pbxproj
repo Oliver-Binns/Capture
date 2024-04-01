@@ -38,7 +38,6 @@
 		7CF718062B7810A000A0AA34 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF718052B7810A000A0AA34 /* Camera.swift */; };
 		7CF718082B7810CA00A0AA34 /* FilmSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF718072B7810CA00A0AA34 /* FilmSpeed.swift */; };
 		7CF7180A2B7810E200A0AA34 /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF718092B7810E200A0AA34 /* Lens.swift */; };
-		7CF7180C2B7810F900A0AA34 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF7180B2B7810F900A0AA34 /* Photo.swift */; };
 		7CF7180E2B78111300A0AA34 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF7180D2B78111300A0AA34 /* Location.swift */; };
 		7CF718122B78221600A0AA34 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF718112B78221600A0AA34 /* LocationManager.swift */; };
 		7CF718142B7826BC00A0AA34 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF718132B7826BC00A0AA34 /* LocationFetcher.swift */; };
@@ -69,6 +68,11 @@
 		A76331642BBAB86E0083176C /* CaptureSessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76331632BBAB86E0083176C /* CaptureSessionConfiguration.swift */; };
 		A76331672BBADD750083176C /* CMSampleBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76331662BBADD750083176C /* CMSampleBuffer.swift */; };
 		A76331692BBAE84B0083176C /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76331682BBAE84B0083176C /* Color+Extensions.swift */; };
+		A779B4092BBAEAC100127710 /* FilmList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A779B4072BBAEAC100127710 /* FilmList.swift */; };
+		A779B40C2BBAF4BB00127710 /* DataMigrationPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A779B40B2BBAF4BB00127710 /* DataMigrationPlan.swift */; };
+		A779B40E2BBAF50B00127710 /* PhotosSchemaV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A779B40D2BBAF50B00127710 /* PhotosSchemaV1.swift */; };
+		A779B4102BBAF54800127710 /* PhotosSchemaV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A779B40F2BBAF54800127710 /* PhotosSchemaV2.swift */; };
+		A779B4122BBAFBDF00127710 /* PhotosSchemaV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A779B4112BBAFBDE00127710 /* PhotosSchemaV3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,7 +118,6 @@
 		7CF718052B7810A000A0AA34 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		7CF718072B7810CA00A0AA34 /* FilmSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmSpeed.swift; sourceTree = "<group>"; };
 		7CF718092B7810E200A0AA34 /* Lens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lens.swift; sourceTree = "<group>"; };
-		7CF7180B2B7810F900A0AA34 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		7CF7180D2B78111300A0AA34 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		7CF718112B78221600A0AA34 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		7CF718132B7826BC00A0AA34 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
@@ -146,6 +149,11 @@
 		A76331632BBAB86E0083176C /* CaptureSessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSessionConfiguration.swift; sourceTree = "<group>"; };
 		A76331662BBADD750083176C /* CMSampleBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMSampleBuffer.swift; sourceTree = "<group>"; };
 		A76331682BBAE84B0083176C /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		A779B4072BBAEAC100127710 /* FilmList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmList.swift; sourceTree = "<group>"; };
+		A779B40B2BBAF4BB00127710 /* DataMigrationPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMigrationPlan.swift; sourceTree = "<group>"; };
+		A779B40D2BBAF50B00127710 /* PhotosSchemaV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosSchemaV1.swift; sourceTree = "<group>"; };
+		A779B40F2BBAF54800127710 /* PhotosSchemaV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosSchemaV2.swift; sourceTree = "<group>"; };
+		A779B4112BBAFBDE00127710 /* PhotosSchemaV3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosSchemaV3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,7 +254,9 @@
 		7CF717E72B780A9500A0AA34 /* Capture */ = {
 			isa = PBXGroup;
 			children = (
+				A779B40A2BBAF4AF00127710 /* Data */,
 				7C4BFE6A2B80079500703BDD /* Extensions */,
+				A779B4052BBAEAA200127710 /* Film */,
 				7CF717F82B780F4A00A0AA34 /* Photos */,
 				7CF717F72B780F4300A0AA34 /* Lenses */,
 				7CF717F62B780F3B00A0AA34 /* Cameras */,
@@ -297,7 +307,6 @@
 				7CF717F92B780F7F00A0AA34 /* PhotosList.swift */,
 				7CF717FB2B780F9900A0AA34 /* PhotoEditor.swift */,
 				7CF718072B7810CA00A0AA34 /* FilmSpeed.swift */,
-				7CF7180B2B7810F900A0AA34 /* Photo.swift */,
 				7CF7180D2B78111300A0AA34 /* Location.swift */,
 			);
 			path = Photos;
@@ -444,6 +453,25 @@
 			path = CaptureSession;
 			sourceTree = "<group>";
 		};
+		A779B4052BBAEAA200127710 /* Film */ = {
+			isa = PBXGroup;
+			children = (
+				A779B4072BBAEAC100127710 /* FilmList.swift */,
+			);
+			path = Film;
+			sourceTree = "<group>";
+		};
+		A779B40A2BBAF4AF00127710 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A779B40B2BBAF4BB00127710 /* DataMigrationPlan.swift */,
+				A779B40D2BBAF50B00127710 /* PhotosSchemaV1.swift */,
+				A779B40F2BBAF54800127710 /* PhotosSchemaV2.swift */,
+				A779B4112BBAFBDE00127710 /* PhotosSchemaV3.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -545,7 +573,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CF7180C2B7810F900A0AA34 /* Photo.swift in Sources */,
+				A779B4092BBAEAC100127710 /* FilmList.swift in Sources */,
 				7CBEBA3A2B81151F00FBA779 /* PHAdjustmentData+Capture.swift in Sources */,
 				7CF717EB2B780A9500A0AA34 /* ContentView.swift in Sources */,
 				7C4BFE702B8011E000703BDD /* PHImageCachingManager+Extensions.swift in Sources */,
@@ -557,6 +585,7 @@
 				7C4BFE722B8012C600703BDD /* PhotoSelector.swift in Sources */,
 				7CF717FC2B780F9900A0AA34 /* PhotoEditor.swift in Sources */,
 				7C4BFE662B7FF7E000703BDD /* LinkToLibrary.swift in Sources */,
+				A779B40C2BBAF4BB00127710 /* DataMigrationPlan.swift in Sources */,
 				7C4BFE6C2B8007A700703BDD /* View+Extensions.swift in Sources */,
 				7C4BFE6E2B800D7000703BDD /* PhotoLibrary.swift in Sources */,
 				7CF718162B782CBD00A0AA34 /* LocationButton.swift in Sources */,
@@ -575,7 +604,9 @@
 				A74C65182BB6B92000C17290 /* CIImage+Extensions.swift in Sources */,
 				7CB5AEBE2B7848DD0045CF9C /* CameraPicker.swift in Sources */,
 				A73E7EA72B9CFF98005C86A7 /* CaptureViewModel.swift in Sources */,
+				A779B4122BBAFBDF00127710 /* PhotosSchemaV3.swift in Sources */,
 				A76331602BBAB4960083176C /* CaptureSession.swift in Sources */,
+				A779B40E2BBAF50B00127710 /* PhotosSchemaV1.swift in Sources */,
 				7CF718182B78336D00A0AA34 /* Geocoder.swift in Sources */,
 				A73E7EAB2B9D1CD7005C86A7 /* CameraCaptureSession.swift in Sources */,
 				7CF717FE2B780FB000A0AA34 /* LensEditor.swift in Sources */,
@@ -584,6 +615,7 @@
 				7CF7180A2B7810E200A0AA34 /* Lens.swift in Sources */,
 				A76331692BBAE84B0083176C /* Color+Extensions.swift in Sources */,
 				7CF718062B7810A000A0AA34 /* Camera.swift in Sources */,
+				A779B4102BBAF54800127710 /* PhotosSchemaV2.swift in Sources */,
 				7CBEBA382B80F02000FBA779 /* Options+Extensions.swift in Sources */,
 				7CB5AEBC2B7847E90045CF9C /* LensPicker.swift in Sources */,
 			);
