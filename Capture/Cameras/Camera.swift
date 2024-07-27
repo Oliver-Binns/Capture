@@ -3,7 +3,7 @@ import SwiftUI
 
 @Model
 final class Camera {
-    @Attribute(.unique) let id: UUID
+    @Attribute(.unique) private(set) var id: UUID
     var make: String
     var model: String
     

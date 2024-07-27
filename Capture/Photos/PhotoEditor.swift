@@ -6,9 +6,11 @@ struct PhotoEditor: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
     
+    let roll: FilmRoll
     let photo: Photo?
     
-    init(photo: Photo?) {
+    init(roll: FilmRoll, photo: Photo?) {
+        self.roll = roll
         self.photo = photo
     }
     
@@ -128,7 +130,8 @@ struct PhotoEditor: View {
                       location: location,
                       camera: camera,
                       lens: lens,
-                      filmSpeed: filmSpeed)
+                      filmSpeed: filmSpeed,
+                      roll: roll)
             )
         }
         

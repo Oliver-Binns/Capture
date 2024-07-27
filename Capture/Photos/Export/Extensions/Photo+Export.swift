@@ -12,7 +12,7 @@ extension Photo {
         [
             kCGImagePropertyExifLensMake: lens?.make,
             kCGImagePropertyExifLensModel: lens?.model,
-            kCGImagePropertyExifISOSpeed: filmSpeed?.rawValue.description,
+            kCGImagePropertyExifISOSpeed: filmSpeed.rawValue.description,
             kCGImagePropertyExifFocalLength: lens?.focalLength?.description,
             kCGImagePropertyExifMaxApertureValue: lens?.maxAperture?.description,
         ].compactMapValues { $0 }
