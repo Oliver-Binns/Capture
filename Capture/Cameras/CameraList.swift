@@ -2,6 +2,8 @@ import SwiftData
 import SwiftUI
 
 struct CamerasList: View {
+    @Environment(\.modelContext) private var modelContext
+
     @Query private var cameras: [Camera]
     @State private var isEditing: Bool = false
     
@@ -11,6 +13,13 @@ struct CamerasList: View {
                 ForEach(cameras) { camera in
                     NavigationLink("\(camera.make) \(camera.model)") {
                         CameraEditor(camera: camera)
+                    }
+                    .swipeActions(edge: .trailing) {
+                        Button(role: .destructive) {
+                            modelContext.delete(camera)
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
                     }
                 }
 

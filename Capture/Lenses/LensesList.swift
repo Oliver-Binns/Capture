@@ -2,6 +2,8 @@ import SwiftData
 import SwiftUI
 
 struct LensesList: View {
+    @Environment(\.modelContext) private var modelContext
+
     @Query private var lenses: [Lens]
     @State private var isEditing: Bool = false
     
@@ -19,6 +21,12 @@ struct LensesList: View {
                                 Text(details)
                                     .font(.subheadline)
                                     .foregroundStyle(.secondary)
+                            }
+                        }.swipeActions(edge: .trailing) {
+                            Button(role: .destructive) {
+                                modelContext.delete(lens)
+                            } label: {
+                                Label("Delete", systemImage: "trash")
                             }
                         }
                     }
