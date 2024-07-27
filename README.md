@@ -2,6 +2,8 @@
 
 A small utility app for iOS which captures metadata when shooting photos on 35mm film.
 
+[![Merged](https://github.com/Oliver-Binns/Capture/actions/workflows/merged.yml/badge.svg)](https://github.com/Oliver-Binns/Capture/actions/workflows/merged.yml)
+
 |![Log Photo screen, showing preview, metadata and equipment entry](/assets/log-photo.png)|![cameras list tab, showing Yashica FX-D Quartz](/assets/cameras.png)|![lenses list tab, showing four lenses in the list](/assets/lenses.png)|
 |-|-|-|
 
