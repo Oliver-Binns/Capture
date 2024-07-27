@@ -4,7 +4,7 @@ import XCTest
 
 final class LensTests: XCTestCase {
     private var container: ModelContainer!
-    
+
     override func setUp() async throws {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         container = try ModelContainer(
@@ -12,12 +12,12 @@ final class LensTests: XCTestCase {
             configurations: config
         )
     }
-    
+
     override func tearDown() {
         container = nil
         super.tearDown()
     }
-    
+
     @MainActor
     func testStrings() {
         let lens = Lens(make: "Carl Zeiss",
@@ -26,7 +26,7 @@ final class LensTests: XCTestCase {
                         minAperture: 16,
                         focalLength: 50)
         container.mainContext.insert(lens)
-        
+
         XCTAssertEqual(lens.description, "Carl Zeiss Planar 1,7/50")
         XCTAssertEqual(lens.details, "ƒ/1.7 • 50mm")
     }

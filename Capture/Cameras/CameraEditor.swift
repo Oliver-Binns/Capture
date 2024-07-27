@@ -3,22 +3,22 @@ import SwiftUI
 struct CameraEditor: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-    
+
     let camera: Camera?
-    
+
     @State private var make: String = ""
     @State private var model: String = ""
-    
+
     private var navigationTitle: String {
         camera == nil ?
             "Add Camera" :
             "Edit Camera"
     }
-    
+
     private var isInvalid: Bool {
         make.isEmpty && model.isEmpty
     }
-    
+
     var body: some View {
         Form {
             TextField("Make", text: $make)
@@ -33,7 +33,7 @@ struct CameraEditor: View {
                     dismiss()
                 }.disabled(isInvalid)
             }
-            
+
             if camera == nil {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
@@ -45,7 +45,7 @@ struct CameraEditor: View {
         .navigationTitle(navigationTitle)
         .macOSSheet()
     }
-    
+
     func save() {
         if let camera {
             camera.make = make

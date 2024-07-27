@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CaptureView: View {
     var viewModel: CaptureViewModel
-    
+
     var body: some View {
         Button {
             Task {
@@ -17,12 +17,12 @@ struct CaptureView: View {
                             photo.resizable().scaledToFill()
                         )
                         .clipped()
-                    
+
                     VStack(alignment: .trailing) {
                         Spacer()
                         HStack(alignment: .bottom) {
                             Spacer()
-                            
+
                             Image(systemName: viewModel.isPreviewing ?
                                   "camera.circle.fill" :
                                     "arrow.uturn.left.circle.fill"

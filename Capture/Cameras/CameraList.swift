@@ -4,7 +4,7 @@ import SwiftUI
 struct CamerasList: View {
     @Query private var cameras: [Camera]
     @State private var isEditing: Bool = false
-    
+
     var body: some View {
         NavigationStack {
             List {
@@ -27,7 +27,6 @@ struct CamerasList: View {
                     Label("Add", systemImage: "plus")
                 }
             }
-            
         }
         .tabItem {
             Label("Cameras", systemImage: "camera.fill")

@@ -27,3 +27,22 @@ jobs:
         with:
           ACTION_TYPE: 'Release'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Distribution P12
+        run: |
+          echo -n $CERTIFICATE_VALUE | base64 --decode -o distribution.p12
+        env:
+          CERTIFICATE_VALUE: ${{ secrets.DISTRIBUTION_CERTIFICATE }}
+
+      - name: Export API Key
+        run: |
+          echo "API_KEY=${{ secrets.API_KEY }}" >> ../GeneralElection.xcconfig
+
+      - name: Deploy
+        run: fastlane deploy
+        env:
+          ISSUER_ID: "69a6de7c-2e67-47e3-e053-5b8c7c11a4d1"
+          KEY_ID: "G6483F9382"
+          KEY_VALUE: ${{ secrets.APPSTORECONNECT_APIKEY }}
+          CERTIFICATE_PASSWORD: ${{ secrets.DISTRIBUTION_PASSWORD }}
+          BUILD_NUMBER: ${{ steps.versioning.outputs.release_version }}

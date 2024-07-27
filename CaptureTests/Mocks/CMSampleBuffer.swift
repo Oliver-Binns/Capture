@@ -2,7 +2,7 @@ import AVFoundation
 
 extension CMSampleBuffer {
     static var mock: CMSampleBuffer {
-        var pixelBuffer : CVPixelBuffer? = nil
+        var pixelBuffer: CVPixelBuffer?
         CVPixelBufferCreate(kCFAllocatorDefault, 100, 100, kCVPixelFormatType_32BGRA, nil, &pixelBuffer)
 
         var info = CMSampleTimingInfo()
@@ -10,17 +10,18 @@ extension CMSampleBuffer {
         info.duration = CMTime.invalid
         info.decodeTimeStamp = CMTime.invalid
 
+        var formatDesc: CMFormatDescription?
+        CMVideoFormatDescriptionCreateForImageBuffer(allocator: kCFAllocatorDefault,
+                                                     imageBuffer: pixelBuffer!,
+                                                     formatDescriptionOut: &formatDesc)
 
-        var formatDesc: CMFormatDescription? = nil
-        CMVideoFormatDescriptionCreateForImageBuffer(allocator: kCFAllocatorDefault, imageBuffer: pixelBuffer!, formatDescriptionOut: &formatDesc)
-
-        var sampleBuffer: CMSampleBuffer? = nil
+        var sampleBuffer: CMSampleBuffer?
 
         CMSampleBufferCreateReadyWithImageBuffer(allocator: kCFAllocatorDefault,
                                                  imageBuffer: pixelBuffer!,
                                                  formatDescription: formatDesc!,
                                                  sampleTiming: &info,
-                                                 sampleBufferOut: &sampleBuffer);
+                                                 sampleBufferOut: &sampleBuffer)
 
         return sampleBuffer!
     }

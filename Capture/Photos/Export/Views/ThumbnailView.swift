@@ -3,9 +3,9 @@ import SwiftUI
 struct ThumbnailView: View {
     @Environment(PhotoLibrary.self) private var photoLibrary
     @State private var image: Image?
-    
+
     let localAssetID: String
-    
+
     var body: some View {
         ZStack {
             if let image = image {
@@ -34,7 +34,7 @@ struct ThumbnailView: View {
             image = nil
         }
     }
-    
+
     func loadImageAsset() async {
         guard let platformImage = await photoLibrary
             .fetchImage(localIdentifier: localAssetID) else {
@@ -43,4 +43,3 @@ struct ThumbnailView: View {
         image = platformImage.image
     }
 }
-

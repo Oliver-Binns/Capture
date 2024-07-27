@@ -1,0 +1,23 @@
+excluded:
+  - .build
+  
+opt_in_rules:
+- sorted_imports
+- vertical_whitespace_opening_braces
+- vertical_whitespace_closing_braces
+
+identifier_name:
+  excluded: # excluded via string array
+    - __opinion
+    - id
+    - x
+    - y
+    - up
+    - ad
+type_name:
+  excluded:
+    - CS
+force_try:
+  severity: warning
+force_cast:
+  severity: warning

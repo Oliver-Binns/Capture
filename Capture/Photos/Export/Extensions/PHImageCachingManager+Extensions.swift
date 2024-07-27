@@ -12,12 +12,12 @@ extension PHCachingImageManager {
         contentMode: PHImageContentMode = .default,
         options: PHImageRequestOptions?
     ) async
-    -> PlatformImage?  {
+    -> PlatformImage? {
         await withCheckedContinuation { continuation in
             self.requestImage(for: asset,
                               targetSize: targetSize,
                               contentMode: contentMode,
-                              options: options) { image, userInfo in
+                              options: options) { image, _ in
                 continuation.resume(returning: image)
             }
         }

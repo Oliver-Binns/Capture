@@ -4,7 +4,7 @@ import SwiftUI
 struct LensesList: View {
     @Query private var lenses: [Lens]
     @State private var isEditing: Bool = false
-    
+
     var body: some View {
         NavigationStack {
             List {
@@ -14,7 +14,7 @@ struct LensesList: View {
                     } label: {
                         VStack(alignment: .leading) {
                             Text(lens.description)
-                            
+
                             if let details = lens.details {
                                 Text(details)
                                     .font(.subheadline)

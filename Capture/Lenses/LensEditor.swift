@@ -3,35 +3,35 @@ import SwiftUI
 struct LensEditor: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-    
+
     let lens: Lens?
-    
+
     @State private var make: String = ""
     @State private var model: String = ""
     @State private var maxAperture: Float?
     @State private var minAperture: Int?
     @State private var focalLength: Int?
-    
+
     private var navigationTitle: String {
         lens == nil ?
             "Add Lens" :
             "Edit Lens"
     }
-    
+
     private var isInvalid: Bool {
         make.isEmpty && model.isEmpty
     }
-    
+
     var body: some View {
         Form {
             TextField("Make", text: $make)
             TextField("Model", text: $model)
-            
+
             TextField("Max Aperture", value: $maxAperture, format: .number)
             #if !os(macOS) && !os(watchOS)
                 .keyboardType(.decimalPad)
             #endif
-            
+
             TextField("Min Aperture", value: $minAperture, format: .number)
             #if !os(macOS) && !os(watchOS)
                 .keyboardType(.numberPad)
@@ -53,7 +53,7 @@ struct LensEditor: View {
                     dismiss()
                 }.disabled(isInvalid)
             }
-            
+
             if lens == nil {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
@@ -65,7 +65,7 @@ struct LensEditor: View {
         .navigationTitle(navigationTitle)
         .macOSSheet()
     }
-    
+
     func save() {
         if let lens {
             lens.make = make
@@ -82,7 +82,7 @@ struct LensEditor: View {
                      focalLength: focalLength)
             )
         }
-        
+
         try? modelContext.save()
     }
 }

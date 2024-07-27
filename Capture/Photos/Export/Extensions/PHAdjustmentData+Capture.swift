@@ -6,7 +6,7 @@ extension PHAdjustmentData {
         guard let bundleID = Bundle.main.bundleIdentifier else {
             fatalError("Error: unable to get bundle identifier")
         }
-        
+
         self.init(formatIdentifier: bundleID,
                   formatVersion: version,
                   data: data)

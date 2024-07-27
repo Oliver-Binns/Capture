@@ -4,27 +4,29 @@ import SwiftUI
 import UIKit
 #endif
 
-final class CameraCaptureSession<Configuration: CaptureSessionConfiguration>: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
+final class CameraCaptureSession<Configuration: CaptureSessionConfiguration>:
+    NSObject,
+    AVCaptureVideoDataOutputSampleBufferDelegate {
     private let configuration: Configuration
     private var captureSession: Configuration.CS {
         configuration.session
     }
-    
+
     private let sessionQueue: DispatchQueue
-    
+
     private var deviceInput: Configuration.CS.DeviceInput?
     private var videoOutput: Configuration.CS.DeviceOutput?
     private var isCaptureSessionConfigured: Bool = false
-    
+
     private var continuation: AsyncStream<CIImage>.Continuation?
-    
+
     init(configuration: Configuration = AVCaptureSessionConfiguration(),
          sessionQueue: DispatchQueue = DispatchQueue(label: "session queue", qos: .userInitiated)) {
         self.configuration = configuration
         self.sessionQueue = sessionQueue
         super.init()
     }
-    
+
     private func resumeVideoCapture() {
         sessionQueue.async { [self] in
             if !isCaptureSessionConfigured {
@@ -35,11 +37,11 @@ final class CameraCaptureSession<Configuration: CaptureSessionConfiguration>: NS
             }
         }
     }
-    
+
     private func configureCaptureSession() {
         captureSession.beginConfiguration()
         captureSession.sessionPreset = .photo
-        
+
         guard let deviceInput = try? configuration.input() else {
             return
         }
@@ -48,34 +50,36 @@ final class CameraCaptureSession<Configuration: CaptureSessionConfiguration>: NS
             preconditionFailure("Expected CameraCaptureSession to be a delegate of CaptureSessionConfiguration")
         }
         let videoOutput = configuration.output(delegate: delegate)
-  
+
         guard captureSession.canAddInput(deviceInput),
               captureSession.canAddOutput(videoOutput) else {
             return
         }
-        
+
         captureSession.addInput(deviceInput)
         captureSession.addOutput(videoOutput)
-        
+
         self.deviceInput = deviceInput
         self.videoOutput = videoOutput
-        
+
         isCaptureSessionConfigured = true
-        
+
         captureSession.commitConfiguration()
     }
-    
+
     private func closeCaptureSession() {
         guard isCaptureSessionConfigured else { return }
-        
+
         if captureSession.isRunning {
             sessionQueue.async {
                 self.captureSession.stopRunning()
             }
         }
     }
-    
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+
+    func captureOutput(_ output: AVCaptureOutput,
+                       didOutput sampleBuffer: CMSampleBuffer,
+                       from connection: AVCaptureConnection) {
         guard let pixelBuffer = sampleBuffer.imageBuffer else { return }
 
         if connection.isVideoOrientationSupported,
@@ -86,9 +90,11 @@ final class CameraCaptureSession<Configuration: CaptureSessionConfiguration>: NS
         let image = CIImage(cvPixelBuffer: pixelBuffer)
         continuation?.yield(image)
     }
-    
+
     #if canImport(UIKit)
-    private func videoOrientation(_ deviceOrientation: UIDeviceOrientation = UIDevice.current.orientation) -> AVCaptureVideoOrientation? {
+    private func videoOrientation(
+        _ deviceOrientation: UIDeviceOrientation = UIDevice.current.orientation
+    ) -> AVCaptureVideoOrientation? {
         switch deviceOrientation {
         case .portrait: return AVCaptureVideoOrientation.portrait
         case .portraitUpsideDown: return AVCaptureVideoOrientation.portraitUpsideDown
@@ -111,11 +117,11 @@ extension CameraCaptureSession: ImageCaptureSession {
             self.continuation = continuation
         }
     }
-    
+
     func stopPreview() {
         continuation?.finish()
         continuation = nil
-        
+
         closeCaptureSession()
     }
 }
