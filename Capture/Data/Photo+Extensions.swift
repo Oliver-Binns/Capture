@@ -6,3 +6,8 @@ extension Photo: Comparable {
     }
 }
 
+extension Photo: Equatable {
+    static func == (lhs: Photo, rhs: Photo) -> Bool {
+        lhs.id == rhs.id
+    }
+}

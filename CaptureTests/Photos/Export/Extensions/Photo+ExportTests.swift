@@ -21,6 +21,7 @@ final class PhotoTests: XCTestCase {
     
     @MainActor
     func testMetadata() throws {
+        let roll = FilmRoll()
         let camera = Camera(make: "Yashica", model: "FX-D Quartz")
         let lens = Lens(make: "Carl Zeiss",
                         model: "Planar 1,7/50",
@@ -33,8 +34,10 @@ final class PhotoTests: XCTestCase {
                           timestamp: Date(), 
                           location: location,
                           camera: camera, lens: lens,
-                          filmSpeed: .fourHundred)
-        
+                          filmSpeed: .fourHundred,
+                          roll: roll)
+
+        container.mainContext.insert(roll)
         container.mainContext.insert(camera)
         container.mainContext.insert(lens)
         container.mainContext.insert(photo)
