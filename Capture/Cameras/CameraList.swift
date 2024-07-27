@@ -13,6 +13,11 @@ struct CamerasList: View {
                         CameraEditor(camera: camera)
                     }
                 }
+
+                if cameras.count == 0 {
+                    ContentUnavailableView("Add a camera to get started!",
+                                           systemImage: "camera.fill")
+                }
             }
             .navigationTitle("Cameras")
             .toolbar {

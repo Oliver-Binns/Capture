@@ -23,6 +23,11 @@ struct LensesList: View {
                         }
                     }
                 }
+
+                if lenses.count == 0 {
+                    ContentUnavailableView("Add a lens to get started!",
+                                           systemImage: "camera.aperture")
+                }
             }
             .navigationTitle("Lenses")
             .toolbar {
