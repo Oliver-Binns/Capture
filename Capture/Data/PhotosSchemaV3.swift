@@ -10,7 +10,7 @@ enum PhotosSchemaV3: VersionedSchema {
     
     @Model
     final class FilmRoll {
-        @Attribute(.unique) let id: UUID
+        @Attribute(.unique) private(set) var id: UUID
         @Relationship(deleteRule: .cascade, inverse: \Photo.roll) var photos: [Photo]
         
         init(id: UUID = UUID()) {
@@ -21,7 +21,7 @@ enum PhotosSchemaV3: VersionedSchema {
     
     @Model
     final class Photo {
-        @Attribute(.unique) let id: UUID
+        @Attribute(.unique) private(set) var id: UUID
         
         @Attribute(.externalStorage)
         var preview: Data?

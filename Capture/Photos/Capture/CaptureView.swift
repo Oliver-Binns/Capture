@@ -35,9 +35,7 @@ struct CaptureView: View {
             } else {
                 ContentUnavailableView("Tap to save a preview",
                                        systemImage: "camera.circle.fill")
-                    .background(.systemGray4)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .foregroundStyle(.label)
             }
         }
     }

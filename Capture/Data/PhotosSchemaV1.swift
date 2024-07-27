@@ -9,10 +9,9 @@ enum PhotosSchemaV1: VersionedSchema {
     }
 
     @Model
-    @available(*, deprecated, renamed: "Photo")
     final class Photo {
-        @Attribute(.unique) let id: UUID
-        
+        @Attribute(.unique) private(set) var id: UUID
+
         @Attribute(.externalStorage)
         var preview: Data?
         

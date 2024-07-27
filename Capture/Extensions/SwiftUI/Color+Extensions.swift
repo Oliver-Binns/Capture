@@ -18,13 +18,3 @@ extension Color {
     }
 }
 
-extension ShapeStyle where Self == Color {
-    static var systemGray4: Color {
-        .systemGray4
-    }
-    
-    static var label: Color {
-        .label
-    }
-}
-
