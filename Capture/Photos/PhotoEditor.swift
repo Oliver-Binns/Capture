@@ -5,15 +5,15 @@ import SwiftUI
 struct PhotoEditor: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-    
+
     let roll: FilmRoll
     let photo: Photo?
-    
+
     init(roll: FilmRoll, photo: Photo?) {
         self.roll = roll
         self.photo = photo
     }
-    
+
     private var captureViewModel = CaptureViewModel()
     @State private var timestamp: Date = Date()
     @State private var location: Location?
@@ -22,7 +22,7 @@ struct PhotoEditor: View {
     @State private var filmSpeed: FilmSpeed = .fourHundred
 
     @State private var hasAppeared: Bool = false
-    
+
     private var cameraText: String {
         if let camera {
             "\(camera.make) \(camera.model)"
@@ -30,7 +30,7 @@ struct PhotoEditor: View {
             "Select Camera"
         }
     }
-    
+
     private var lensText: String {
         if let lens {
             "\(lens.make) \(lens.model)"
@@ -38,7 +38,7 @@ struct PhotoEditor: View {
             "Select Lens"
         }
     }
-    
+
     var body: some View {
         Form {
             Section("Preview") {
@@ -47,36 +47,36 @@ struct PhotoEditor: View {
                     .padding(.vertical, -12)
                     .padding(.horizontal, -16)
             }
-            
+
             Section("Metadata") {
                 DatePicker("Timestamp", selection: $timestamp)
                 LocationButton(location: $location)
             }
-            
+
             Section("Equipment") {
                 NavigationLink {
                     CameraPicker(camera: $camera)
                 } label: {
                     Label(cameraText, systemImage: "camera")
                 }
-                
+
                 NavigationLink {
                     LensPicker(lens: $lens)
                 } label: {
                     Label(lensText, systemImage: "camera.aperture")
                 }
             }
-            
+
             Section("Settings") {
                 Picker("Film Speed", selection: $filmSpeed) {
                     ForEach(FilmSpeed.allCases) { speed in
                         Text("\(speed.rawValue)").tag(speed)
                     }
                 }
-                
+
                 Text("Aperture (Lens)")
             }
-            
+
             if let photo {
                 Section("Export Data") {
                     LinkToLibrary(photo: photo)
@@ -104,7 +104,7 @@ struct PhotoEditor: View {
                     dismiss()
                 }
             }
-            
+
             if photo == nil {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
@@ -114,7 +114,7 @@ struct PhotoEditor: View {
             }
         }
     }
-    
+
     private func save() {
         if let photo {
             photo.preview = captureViewModel.data
@@ -134,7 +134,7 @@ struct PhotoEditor: View {
                       roll: roll)
             )
         }
-        
+
         try? modelContext.save()
     }
 }

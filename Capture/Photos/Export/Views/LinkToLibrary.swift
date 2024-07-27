@@ -6,9 +6,9 @@ struct LinkToLibrary: View {
     @State private var photoLibrary = PhotoLibrary()
     @State private var isLinking: Bool = false
     @State private var errorOccured: Bool = false
-    
+
     let photo: Photo
-    
+
     var body: some View {
         Button {
             Task {
@@ -50,7 +50,7 @@ struct LinkToLibrary: View {
             reason: "You must grant access to Photo Library in the Settings app."
         )
     }
-    
+
     func displayPhotoSelector() async {
         do {
             try await photoLibrary.loadItems()

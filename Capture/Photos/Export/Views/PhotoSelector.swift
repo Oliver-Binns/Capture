@@ -3,9 +3,9 @@ import SwiftUI
 
 struct PhotoSelector: View {
     @Environment(PhotoLibrary.self) private var photoLibrary
-    
+
     let didSelect: (PHAsset) -> Void
-    
+
     var body: some View {
         ScrollView {
             LazyVGrid(columns: .three, spacing: 7) {

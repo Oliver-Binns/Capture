@@ -24,7 +24,12 @@ jobs:
         with:
           lfs: 'true'
           fetch-depth: 0
-          
+
+      - name: Lint
+        run: |
+          brew install swiftlint
+          swiftlint --strict
+
       - name: Validate Pull Request Name
         id: versioning
         uses: Oliver-Binns/Versioning@main

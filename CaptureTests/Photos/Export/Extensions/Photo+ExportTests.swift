@@ -5,7 +5,7 @@ import XCTest
 
 final class PhotoTests: XCTestCase {
     private var container: ModelContainer!
-    
+
     override func setUp() async throws {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         container = try ModelContainer(
@@ -13,12 +13,12 @@ final class PhotoTests: XCTestCase {
             configurations: config
         )
     }
-    
+
     override func tearDown() {
         container = nil
         super.tearDown()
     }
-    
+
     @MainActor
     func testMetadata() throws {
         let roll = FilmRoll()
@@ -29,9 +29,9 @@ final class PhotoTests: XCTestCase {
                         minAperture: 16,
                         focalLength: 50)
         let location = Location(name: "Greenwich Observatory", latitude: 51.4769, longitude: 0)
-        
+
         let photo = Photo(preview: nil,
-                          timestamp: Date(), 
+                          timestamp: Date(),
                           location: location,
                           camera: camera, lens: lens,
                           filmSpeed: .fourHundred,
@@ -41,7 +41,7 @@ final class PhotoTests: XCTestCase {
         container.mainContext.insert(camera)
         container.mainContext.insert(lens)
         container.mainContext.insert(photo)
-        
+
         XCTAssertEqual(
             photo.metadata,
             [

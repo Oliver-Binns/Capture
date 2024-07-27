@@ -2,10 +2,10 @@ import SwiftUI
 
 struct LocationButton: View {
     @Binding var location: Location?
-    
+
     @State private var showLocationPermissionError: Bool = false
     @State private var locationFetcher = LocationFetcher()
-    
+
     private var displayText: String {
         if let name = location?.name {
             name
@@ -15,7 +15,7 @@ struct LocationButton: View {
             "Add Location"
         }
     }
-    
+
     var body: some View {
         Button {
             Task {
@@ -38,8 +38,7 @@ struct LocationButton: View {
             reason: "You must grant access to location data in the Settings app."
         )
     }
-    
-    
+
     func fetchLocation() async {
         if locationFetcher.isPermissionDenied {
             showLocationPermissionError = true

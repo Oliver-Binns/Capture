@@ -4,7 +4,7 @@ final class FetchResultCollection: RandomAccessCollection {
     let includeHiddenAssets: Bool
     let includeBurstAssets: Bool
     let oldestFirst: Bool
-    
+
     private lazy var fetchResult: PHFetchResult<PHAsset> = {
         let fetchOptions = PHFetchOptions()
         fetchOptions.includeHiddenAssets = includeHiddenAssets
@@ -15,7 +15,7 @@ final class FetchResultCollection: RandomAccessCollection {
         return PHAsset
             .fetchAssets(with: .image, options: fetchOptions)
     }()
-    
+
     init(includeHiddenAssets: Bool = false,
          includeBurstAssets: Bool = false,
          oldestFirst: Bool = false) {
@@ -27,7 +27,7 @@ final class FetchResultCollection: RandomAccessCollection {
     var startIndex: Int {
         0
     }
-    
+
     var endIndex: Int {
         fetchResult.count
     }

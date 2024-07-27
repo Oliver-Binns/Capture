@@ -5,7 +5,6 @@ struct FilmList: View {
     @Query var rolls: [FilmRoll]
     @Environment(\.modelContext) private var modelContext
 
-
     var body: some View {
         NavigationStack {
             Group {

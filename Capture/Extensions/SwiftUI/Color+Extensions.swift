@@ -8,7 +8,7 @@ extension Color {
         Color(.lightGray)
         #endif
     }
-    
+
     static var label: Color {
         #if canImport(UIKit)
         Color(.label)
@@ -17,4 +17,3 @@ extension Color {
         #endif
     }
 }
-

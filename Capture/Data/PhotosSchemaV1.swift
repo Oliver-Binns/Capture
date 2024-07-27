@@ -3,7 +3,7 @@ import SwiftData
 
 enum PhotosSchemaV1: VersionedSchema {
     static var versionIdentifier = Schema.Version(1, 0, 0)
-    
+
     static var models: [any PersistentModel.Type] {
         [Photo.self]
     }
@@ -14,15 +14,15 @@ enum PhotosSchemaV1: VersionedSchema {
 
         @Attribute(.externalStorage)
         var preview: Data?
-        
+
         var timestamp: Date
         var location: Location?
-        
+
         @Relationship var camera: Camera?
         @Relationship var lens: Lens?
-        
+
         var filmSpeed: FilmSpeed
-        
+
         init(id: UUID = UUID(),
              preview: Data?,
              timestamp: Date,
@@ -39,5 +39,4 @@ enum PhotosSchemaV1: VersionedSchema {
             self.filmSpeed = filmSpeed
         }
     }
-
 }

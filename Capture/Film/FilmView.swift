@@ -3,7 +3,7 @@ import SwiftUI
 struct FilmView: View {
     @State var film: FilmRoll
     @State var isEditing: Bool = false
-    
+
     var body: some View {
         GeometryReader { proxy in
             ScrollView(.horizontal) {

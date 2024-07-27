@@ -8,9 +8,12 @@ final class CIImageExtensionsTests: XCTestCase {
             CIImage().exportOptions.count,
             1
         )
-        
+
         XCTAssertEqual(
-            CIImage().exportOptions[kCGImageDestinationLossyCompressionQuality as CIImageRepresentationOption] as? Double,
+            CIImage()
+                .exportOptions[
+                    kCGImageDestinationLossyCompressionQuality as CIImageRepresentationOption
+                ] as? Double,
             0.7
         )
     }

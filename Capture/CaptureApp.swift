@@ -4,7 +4,7 @@ import SwiftUI
 @main
 struct CaptureApp: App {
     let modelContainer: ModelContainer
-    
+
     init() {
         do {
             modelContainer = try ModelContainer(
@@ -15,7 +15,7 @@ struct CaptureApp: App {
             fatalError("Failed to initialize model container.")
         }
     }
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView()
